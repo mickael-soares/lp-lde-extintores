@@ -37,7 +37,7 @@
   <!-- Google Fonts: Montserrat + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -53,6 +53,7 @@
           colors: {
             ld: {
               navy: '#0B192C',
+              navyDark: '#07101D',
               navyLight: '#152C4A',
               red: '#DC2626',
               redDark: '#B91C1C',
@@ -99,34 +100,34 @@
 <body class="font-sans text-ld-ink bg-white selection:bg-ld-red selection:text-white min-h-screen flex flex-col">
 
   <!-- =========================================================
-       HEADER FIXO (NAVEGAÇÃO MULTIPÁGINA CLEAN)
+       HEADER FIXO INDUSTRIAL DARK
   ========================================================= -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+  <header class="sticky top-0 z-40 bg-ld-navyDark/95 backdrop-blur-md border-b border-white/10 text-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
       <!-- Marca / Monograma Vetorial LD -->
       <a href="index.html" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-ld-navy flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+        <div class="w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center shadow-sm group-hover:scale-105 transition">
           <svg viewBox="0 0 64 64" class="w-8 h-8" aria-hidden="true">
             <path d="M14 13v38h20v-8.5H23.5V13H14z" fill="#FFFFFF"/>
             <path d="M29 13h8.5C49 13 56 20.8 56 32s-7 19-18.5 19H29v-8.5h8c6.6 0 10.5-4.3 10.5-10.5S43.6 21.5 37 21.5h-8V13z" fill="#DC2626"/>
           </svg>
         </div>
         <div class="leading-tight">
-          <span class="block font-display text-lg sm:text-xl font-extrabold tracking-tight text-ld-navy leading-none">
+          <span class="block font-display text-lg sm:text-xl font-extrabold tracking-tight text-white leading-none">
             LD <span class="text-ld-red">EXTINTORES</span>
           </span>
-          <span class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500 mt-1">
+          <span class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400 mt-1">
             Bom Jesus - PI e Região
           </span>
         </div>
       </a>
 
       <!-- Navegação Desktop Multipágina -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
-        <a href="#catalogo" class="text-ld-red font-bold transition">Catálogo &amp; Orçamento</a>
-        <a href="#duvidas" class="hover:text-ld-red transition">Dúvidas</a>
-        <a href="sobre.html" class="hover:text-ld-red transition">A Empresa</a>
-        <a href="trabalhe-conosco.html" class="hover:text-ld-red transition">Trabalhe Conosco</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="#catalogo" class="text-white font-bold transition">Catálogo &amp; Orçamento</a>
+        <a href="#duvidas" class="hover:text-white transition">Dúvidas</a>
+        <a href="sobre.html" class="hover:text-white transition">A Empresa</a>
+        <a href="trabalhe-conosco.html" class="hover:text-white transition">Trabalhe Conosco</a>
       </nav>
 
       <!-- Ações Header -->
@@ -134,17 +135,17 @@
         <button
           type="button"
           onclick="openBudgetDrawer()"
-          class="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-red-50 hover:bg-red-100 text-ld-red font-bold text-xs sm:text-sm border border-red-200 transition cursor-pointer"
+          class="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-xl btn-glow-red text-white font-bold text-xs sm:text-sm cursor-pointer"
         >
           <i class="fa-solid fa-clipboard-list"></i>
           <span class="hidden sm:inline">Meu Orçamento</span>
-          <span id="header-budget-badge" class="hidden absolute -top-1.5 -right-1.5 min-w-[20px] h-[20px] px-1 rounded-full bg-ld-navy text-white text-[11px] font-extrabold flex items-center justify-center shadow">0</span>
+          <span id="header-budget-badge" class="hidden absolute -top-1.5 -right-1.5 min-w-[20px] h-[20px] px-1 rounded-full bg-amber-400 text-ld-navyDark text-[11px] font-extrabold flex items-center justify-center shadow">0</span>
         </button>
 
         <button
           id="mobile-menu-btn"
           type="button"
-          class="lg:hidden w-10 h-10 rounded-full bg-slate-100 text-ld-navy flex items-center justify-center"
+          class="lg:hidden w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center"
           aria-label="Abrir menu"
         >
           <i class="fa-solid fa-bars"></i>
@@ -153,117 +154,118 @@
     </div>
 
     <!-- Menu Mobile -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 text-sm font-semibold text-slate-700">
+    <div id="mobile-menu" class="hidden lg:hidden bg-ld-navy border-t border-white/10 px-6 py-4 space-y-3 text-sm font-semibold text-slate-200">
       <a href="#catalogo" class="block py-1 text-ld-red font-bold">Catálogo &amp; Orçamento</a>
-      <a href="#duvidas" class="block py-1 hover:text-ld-red">Dúvidas Frequentes</a>
-      <a href="sobre.html" class="block py-1 hover:text-ld-red">A Empresa (Sobre Nós)</a>
-      <a href="trabalhe-conosco.html" class="block py-1 hover:text-ld-red">Trabalhe Conosco</a>
+      <a href="#duvidas" class="block py-1 hover:text-white">Dúvidas Frequentes</a>
+      <a href="sobre.html" class="block py-1 hover:text-white">A Empresa (Sobre Nós)</a>
+      <a href="trabalhe-conosco.html" class="block py-1 hover:text-white">Trabalhe Conosco</a>
     </div>
   </header>
 
   <main class="flex-1">
     <!-- =========================================================
-         HERO SECTION (CLEAN & DIRETO)
+         HERO INDUSTRIAL COM CORTE DIAGONAL E FOTO TÉCNICA
     ========================================================= -->
-    <section id="inicio" class="bg-hero-industrial text-white relative overflow-hidden py-14 lg:py-20">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <section id="inicio" class="bg-hero-industrial text-white relative overflow-hidden py-12 lg:py-16 border-b border-white/10">
+      <!-- Faixa Diagonal Vermelha Decorativa -->
+      <div class="hidden lg:block hero-diagonal-accent absolute top-0 bottom-0 right-[34%] w-28 opacity-90 pointer-events-none"></div>
 
-        <!-- Coluna Texto -->
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+
+        <!-- Coluna Esquerda: Título & Selos Técnicos -->
         <div class="lg:col-span-7 fade-up">
-          <div class="flex flex-wrap items-center gap-2 mb-5">
-            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-bold text-white">
-              <i class="fa-solid fa-location-dot text-ld-red"></i> Bom Jesus - PI e Região
+          <div class="flex flex-wrap items-center gap-2 mb-4">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-ld-red text-white text-[11px] font-extrabold uppercase tracking-wider">
+              <i class="fa-solid fa-shield-halved"></i> Engenharia &amp; Prevenção
             </span>
-            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-ld-red/20 border border-ld-red/40 text-xs font-bold text-white">
-              <i class="fa-solid fa-certificate text-amber-400"></i> Registrada no INMETRO
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white/10 border border-white/15 text-[11px] font-bold text-slate-200 uppercase tracking-wider">
+              <i class="fa-solid fa-location-dot text-ld-red"></i> Bom Jesus - PI e Região
             </span>
           </div>
 
-          <h1 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight tracking-tight">
-            Segurança não é detalhe. <span class="text-ld-red">Prevenir é proteger!</span>
+          <h1 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight tracking-tight uppercase">
+            Proteção Contra Incêndio de <span class="text-ld-red">Alto Desempenho</span>
           </h1>
 
           <p class="mt-3.5 text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
-            Venda, recarga e manutenção certificada de <strong class="text-white">extintores de incêndio</strong>, <strong class="text-white">placas fotoluminescentes</strong> e <strong class="text-white">luminárias de emergência LED</strong> para comércios, empresas, condomínios e fazendas.
+            Venda, recarga e inspeção técnica certificada de <strong class="text-white">extintores de incêndio</strong>, <strong class="text-white">placas NBR 13434</strong> e <strong class="text-white">luminárias LED 1.200lm</strong> para indústrias, agronegócio, comércios e condomínios.
           </p>
 
-          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+          <!-- CTAs Principais -->
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
             <a
               href="#catalogo"
-              class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-ld-red hover:bg-ld-redDark text-white font-bold text-sm shadow-lg shadow-ld-red/25 transition"
+              class="btn-glow-red inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider"
             >
               <i class="fa-solid fa-calculator"></i>
-              <span>Simular Meu Orçamento</span>
+              <span>Simular Orçamento Online</span>
             </a>
 
             <button
               type="button"
               onclick="openDirectWhatsApp()"
-              class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-white hover:bg-emerald-50 text-ld-navy font-bold text-sm shadow-sm transition cursor-pointer"
+              class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-xs sm:text-sm transition cursor-pointer"
             >
-              <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
-              <span>Falar no WhatsApp</span>
+              <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+              <span>Atendimento Rápido</span>
             </button>
           </div>
-        </div>
 
-        <!-- Vitrine Rápida Hero (3 Atalhos Limpos) -->
-        <div class="lg:col-span-5 fade-up">
-          <div class="bg-white/10 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-white/15 shadow-2xl">
-            <div class="flex items-center justify-between mb-4">
-              <span class="text-xs font-extrabold uppercase tracking-wider text-white">Soluções Principais</span>
-              <span class="inline-flex items-center gap-1 text-[11px] font-bold text-amber-300 bg-white/10 px-2.5 py-1 rounded-full">
-                <i class="fa-solid fa-shield-halved text-[10px]"></i> Selo INMETRO
+          <!-- 3 Badges Técnicos Industriais (ABNT / INMETRO / BOMBEIROS) -->
+          <div class="mt-7 pt-6 border-t border-white/10 grid grid-cols-3 gap-2.5 sm:gap-4">
+            <div class="bg-white/5 border border-white/10 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-lg bg-ld-red/20 border border-ld-red/40 text-ld-red flex items-center justify-center shrink-0 text-xs">
+                <i class="fa-solid fa-gear"></i>
               </span>
+              <div class="min-w-0">
+                <strong class="block text-[11px] sm:text-xs font-extrabold text-white leading-tight truncate">ABNT NBR</strong>
+                <span class="block text-[10px] text-slate-400 truncate">Norma Técnica</span>
+              </div>
             </div>
 
-            <div class="space-y-2.5">
-              <a href="#catalogo" class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition">
-                <div class="flex items-center gap-3">
-                  <span class="w-10 h-10 rounded-xl bg-ld-red text-white flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-fire-extinguisher"></i>
-                  </span>
-                  <div>
-                    <p class="font-bold text-white text-sm">Extintores Novos</p>
-                    <p class="text-xs text-slate-300">Pó ABC, Água 10L, CO₂ e BC</p>
-                  </div>
-                </div>
-                <span class="text-right shrink-0">
-                  <span class="block text-[10px] uppercase text-slate-400 font-bold">A partir de</span>
-                  <span class="text-sm font-extrabold text-amber-400">R$ 165</span>
-                </span>
-              </a>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0 text-xs">
+                <i class="fa-solid fa-certificate"></i>
+              </span>
+              <div class="min-w-0">
+                <strong class="block text-[11px] sm:text-xs font-extrabold text-white leading-tight truncate">INMETRO</strong>
+                <span class="block text-[10px] text-slate-400 truncate">Selo Oficial</span>
+              </div>
+            </div>
 
-              <a href="#catalogo" onclick="window.selectCatalogCategory && window.selectCatalogCategory('recarga-manutencao')" class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition">
-                <div class="flex items-center gap-3">
-                  <span class="w-10 h-10 rounded-xl bg-white/15 text-amber-400 flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-rotate"></i>
-                  </span>
-                  <div>
-                    <p class="font-bold text-white text-sm">Recarga &amp; Manutenção</p>
-                    <p class="text-xs text-slate-300">Selo INMETRO, lacre e anel do ano</p>
-                  </div>
-                </div>
-                <span class="text-right shrink-0">
-                  <span class="block text-[10px] uppercase text-slate-400 font-bold">A partir de</span>
-                  <span class="text-sm font-extrabold text-amber-400">R$ 75</span>
-                </span>
-              </a>
+            <div class="bg-white/5 border border-white/10 rounded-xl p-2.5 sm:p-3 flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center shrink-0 text-xs">
+                <i class="fa-solid fa-truck-fast"></i>
+              </span>
+              <div class="min-w-0">
+                <strong class="block text-[11px] sm:text-xs font-extrabold text-white leading-tight truncate">COLETA LOCAL</strong>
+                <span class="block text-[10px] text-slate-400 truncate">Bom Jesus - PI</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-              <a href="#catalogo" onclick="window.selectCatalogCategory && window.selectCatalogCategory('sinalizacao')" class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition">
-                <div class="flex items-center gap-3">
-                  <span class="w-10 h-10 rounded-xl bg-white/15 text-emerald-400 flex items-center justify-center shrink-0">
-                    <i class="fa-solid fa-lightbulb"></i>
-                  </span>
-                  <div>
-                    <p class="font-bold text-white text-sm">Placas &amp; Luminárias LED</p>
-                    <p class="text-xs text-slate-300">Sinalização NBR e Blumenau LED</p>
-                  </div>
+        <!-- Coluna Direita: Fotografia Industrial em Moldura Técnica -->
+        <div class="lg:col-span-5 fade-up">
+          <div class="relative rounded-2xl overflow-hidden border-2 border-ld-red/60 shadow-2xl bg-ld-navy">
+            <img
+              src="images/hero-industrial.jpg"
+              alt="Inspeção técnica de extintores de incêndio - LD Extintores Bom Jesus PI"
+              class="w-full h-72 sm:h-80 lg:h-[360px] object-cover object-center"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-ld-navyDark via-ld-navyDark/30 to-transparent"></div>
+
+            <!-- Barra Inferior da Foto -->
+            <div class="absolute bottom-3 inset-x-3 bg-ld-navyDark/90 backdrop-blur-md border border-white/15 rounded-xl p-3.5 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping shrink-0"></span>
+                <div>
+                  <strong class="text-xs font-extrabold text-white block leading-none">Inspeção &amp; Recarga Certificada</strong>
+                  <span class="text-[11px] text-slate-300">Atendimento comercial, industrial e fazendas</span>
                 </div>
-                <span class="text-right shrink-0">
-                  <span class="block text-[10px] uppercase text-slate-400 font-bold">A partir de</span>
-                  <span class="text-sm font-extrabold text-amber-400">R$ 18</span>
-                </span>
+              </div>
+              <a href="#catalogo" class="shrink-0 px-3 py-1.5 rounded-lg bg-ld-red text-white font-bold text-xs hover:bg-ld-redDark transition">
+                Ver Linha →
               </a>
             </div>
           </div>
@@ -273,82 +275,74 @@
     </section>
 
     <!-- =========================================================
-         FAIXA DE DIFERENCIAIS (4 PILARES COMPACTOS)
-    ========================================================= -->
-    <section class="py-8 bg-white border-b border-slate-100">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="flex items-start gap-3">
-          <span class="w-10 h-10 rounded-xl bg-red-50 text-ld-red flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-medal"></i>
-          </span>
-          <div>
-            <h2 class="font-bold text-xs sm:text-sm text-ld-navy">Selo INMETRO</h2>
-            <p class="text-xs text-slate-500 mt-0.5">Manutenção oficial com lacre e garantia.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="w-10 h-10 rounded-xl bg-red-50 text-ld-red flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-truck-pickup"></i>
-          </span>
-          <div>
-            <h2 class="font-bold text-xs sm:text-sm text-ld-navy">Coleta &amp; Entrega</h2>
-            <p class="text-xs text-slate-500 mt-0.5">Buscamos na sua empresa em Bom Jesus e região.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="w-10 h-10 rounded-xl bg-red-50 text-ld-red flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-signs-post"></i>
-          </span>
-          <div>
-            <h2 class="font-bold text-xs sm:text-sm text-ld-navy">Linha Completa</h2>
-            <p class="text-xs text-slate-500 mt-0.5">Extintores, placas e luminárias LED.</p>
-          </div>
-        </div>
-
-        <div class="flex items-start gap-3">
-          <span class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-file-shield"></i>
-          </span>
-          <div>
-            <h2 class="font-bold text-xs sm:text-sm text-ld-navy">Pronto p/ Vistoria</h2>
-            <p class="text-xs text-slate-500 mt-0.5">Equipamentos dentro das normas ABNT.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================================================
-         CATÁLOGO INTERATIVO & SIMULADOR DE ORÇAMENTO (VUE 3 LOCAL)
+         APLICAÇÃO VUE 3 LOCAL: SELETOR DE CLASSES + CATÁLOGO INDUSTRIAL
     ========================================================= -->
     <div id="ld-catalog-app" v-cloak>
-      <section id="catalogo" class="py-16 bg-slate-50">
+
+      <!-- FAIXA INTERATIVA: SELETOR DE CLASSES DE INCÊNDIO (CLASSE A, B, C) -->
+      <section class="bg-ld-navy border-b border-white/10 py-6 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-white/5 border border-white/10 rounded-2xl p-4 sm:px-6">
+            <!-- Botões Classe A / B / C -->
+            <div class="flex items-center gap-2 shrink-0">
+              <button
+                v-for="fc in fireClasses"
+                :key="fc.id"
+                type="button"
+                @click="activeFireClassId = fc.id"
+                :class="activeFireClassId === fc.id ? 'bg-ld-red text-white border-ld-red shadow-lg' : 'bg-white/5 text-slate-300 border-white/15 hover:bg-white/10'"
+                class="px-3.5 py-2 rounded-xl border font-display font-extrabold text-xs uppercase tracking-wider transition cursor-pointer flex items-center gap-1.5"
+              >
+                <i :class="['fa-solid', fc.icon, 'text-[11px]']"></i>
+                <span>{{ fc.code }}</span>
+              </button>
+            </div>
+
+            <!-- Explicação Reativa da Classe Selecionada -->
+            <div class="flex-1 min-w-0">
+              <div class="flex flex-wrap items-center gap-2">
+                <h2 class="font-display font-bold text-xs sm:text-sm text-white">
+                  {{ currentFireClass.title }}
+                </h2>
+                <span class="text-[11px] font-bold text-amber-400 bg-amber-500/15 border border-amber-500/30 px-2.5 py-0.5 rounded-md">
+                  Indicado: {{ currentFireClass.recommended }}
+                </span>
+              </div>
+              <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+                {{ currentFireClass.desc }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CATÁLOGO INDUSTRIAL DARK COM FOTOS DE PRODUTOS -->
+      <section id="catalogo" class="py-16 bg-catalog-industrial text-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
           <!-- Cabeçalho da Seção -->
           <div class="text-center max-w-2xl mx-auto mb-8 fade-up">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-ld-red font-bold text-xs uppercase tracking-wider">
-              <i class="fa-solid fa-fire-flame-curved"></i>
-              Catálogo &amp; Valores
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-ld-red/20 border border-ld-red/40 text-white font-bold text-xs uppercase tracking-wider">
+              <i class="fa-solid fa-fire-flame-curved text-ld-red"></i>
+              Catálogo de Equipamentos &amp; Serviços
             </span>
-            <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy mt-2">
+            <h2 class="font-display font-extrabold text-xl sm:text-2xl text-white mt-2 uppercase tracking-tight">
               Simule seu Orçamento Online
             </h2>
-            <p class="text-slate-500 text-xs sm:text-sm mt-1">
-              Escolha a categoria abaixo, adicione os itens desejados e envie pronto para o nosso WhatsApp.
+            <p class="text-slate-300 text-xs sm:text-sm mt-1">
+              Selecione a categoria abaixo, adicione os equipamentos com 1 clique e envie direto para o nosso WhatsApp.
             </p>
           </div>
 
           <!-- Abas de Categorias Reativas (Vue 3) -->
-          <div class="flex items-center lg:justify-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-4">
+          <div class="flex items-center lg:justify-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-6">
             <button
               v-for="cat in categories"
               :key="cat.id"
               type="button"
               @click="selectCategory(cat.id)"
-              :class="activeCategory === cat.id ? 'active' : 'bg-white text-ld-navy border-slate-200 hover:border-ld-red/50 hover:bg-red-50/30'"
-              class="catalog-tab shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs sm:text-sm font-bold cursor-pointer select-none"
+              :class="activeCategory === cat.id ? 'active' : 'bg-white/5 text-slate-200 border-white/15 hover:border-ld-red/60 hover:bg-white/10'"
+              class="catalog-tab shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs sm:text-sm font-bold cursor-pointer select-none"
             >
               <i :class="['fa-solid', cat.icon, 'text-xs', activeCategory === cat.id ? 'text-white' : 'text-ld-red']"></i>
               <span>{{ cat.label }}</span>
@@ -362,78 +356,111 @@
             </button>
           </div>
 
-          <!-- Painel de Cards Reativo (Vue 3) -->
+          <!-- Painel de Cards Industriais com Fotos -->
           <div :key="activeCategory" class="catalog-panel-enter">
-            <p class="text-center text-xs sm:text-sm text-slate-500 mb-6">
+            <p class="text-center text-xs sm:text-sm text-slate-300 mb-6">
               {{ currentCategory.subtitle }}
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <article
                 v-for="item in currentCategory.items"
                 :key="item.id"
-                :class="[
-                  cart[item.id] > 0 ? 'in-cart' : '',
-                  item.featured && !cart[item.id] ? 'border-ld-red/35 ring-1 ring-ld-red/10' : 'border-slate-200/80'
-                ]"
-                class="product-card bg-white rounded-3xl border p-5 flex flex-col justify-between shadow-2xs"
+                :class="{ 'in-cart': cart[item.id] > 0 }"
+                class="industrial-card rounded-2xl overflow-hidden flex flex-col justify-between"
               >
                 <div>
-                  <div class="flex items-center justify-between gap-2 mb-3">
+                  <!-- Imagem do Equipamento com Zoom Lightbox -->
+                  <div
+                    @click="openLightbox(item)"
+                    class="relative h-52 bg-ld-navyDark overflow-hidden group cursor-zoom-in border-b border-white/10"
+                  >
+                    <img
+                      :src="item.image"
+                      :alt="item.name"
+                      loading="lazy"
+                      class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-ld-navyDark via-transparent to-black/30"></div>
+
+                    <!-- Badge Topo Esquerdo -->
                     <span
-                      :class="item.featured ? 'bg-ld-red text-white' : 'bg-slate-100 text-ld-navy'"
-                      class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider"
+                      :class="item.featured ? 'bg-ld-red text-white' : 'bg-ld-navyDark/90 text-slate-200 border border-white/15'"
+                      class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider shadow"
                     >
                       {{ item.badge }}
                     </span>
+
+                    <!-- Tag Técnica Topo Direito -->
+                    <span
+                      v-if="item.specTag"
+                      class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-black/70 backdrop-blur-xs border border-white/15 text-amber-400 text-[10px] font-bold uppercase tracking-wider"
+                    >
+                      {{ item.specTag }}
+                    </span>
+
+                    <!-- Selo No Orçamento -->
                     <span
                       v-if="cart[item.id] > 0"
-                      class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full"
+                      class="absolute bottom-3 left-3 inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-500 text-white text-[11px] font-extrabold shadow"
                     >
-                      <i class="fa-solid fa-check text-[9px]"></i> No orçamento
+                      <i class="fa-solid fa-check text-[10px]"></i> {{ cart[item.id] }} no orçamento
+                    </span>
+
+                    <!-- Botão Ampliar -->
+                    <span class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-semibold px-2.5 py-1 rounded-md opacity-80 group-hover:opacity-100 transition">
+                      <i class="fa-solid fa-magnifying-glass-plus mr-1"></i>Ampliar
                     </span>
                   </div>
 
-                  <h3 class="font-display font-bold text-sm sm:text-base text-ld-navy leading-snug">
-                    {{ item.name }}
-                  </h3>
-                  <p class="text-xs text-slate-500 mt-0.5">{{ item.subtitle }}</p>
+                  <!-- Corpo do Card -->
+                  <div class="p-5">
+                    <h3 class="font-display font-bold text-sm sm:text-base text-white leading-snug">
+                      {{ item.name }}
+                    </h3>
+                    <p class="text-xs text-slate-400 mt-0.5">{{ item.subtitle }}</p>
 
-                  <div class="mt-4 flex items-baseline gap-1.5">
-                    <span class="text-2xl font-extrabold text-ld-navy">
-                      {{ item.priceLabel ? item.priceLabel : formatBRL(item.price) }}
-                    </span>
-                    <span v-if="item.price > 0" class="text-xs font-semibold text-slate-400">
-                      / {{ item.unit }}
-                    </span>
+                    <div class="mt-3.5 pt-3 border-t border-white/10 flex items-baseline justify-between">
+                      <div class="flex items-baseline gap-1.5">
+                        <span class="text-2xl font-extrabold text-white">
+                          {{ item.priceLabel ? item.priceLabel : formatBRL(item.price) }}
+                        </span>
+                        <span v-if="item.price > 0" class="text-xs font-semibold text-slate-400">
+                          / {{ item.unit }}
+                        </span>
+                      </div>
+                      <span class="text-[11px] font-bold text-emerald-400">
+                        <i class="fa-solid fa-shield-check mr-1"></i>Garantia LD
+                      </span>
+                    </div>
+
+                    <ul class="mt-3.5 space-y-1.5 text-xs text-slate-300">
+                      <li v-for="(feat, idx) in item.features" :key="idx" class="flex items-start gap-2">
+                        <i class="fa-solid fa-check text-ld-red mt-0.5 shrink-0 text-[11px]"></i>
+                        <span>{{ feat }}</span>
+                      </li>
+                    </ul>
                   </div>
-
-                  <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600">
-                    <li v-for="(feat, idx) in item.features" :key="idx" class="flex items-start gap-2">
-                      <i class="fa-solid fa-check text-ld-red mt-0.5 shrink-0 text-[11px]"></i>
-                      <span>{{ feat }}</span>
-                    </li>
-                  </ul>
                 </div>
 
-                <!-- Controles Reativos do Card -->
-                <div class="mt-5 pt-4 border-t border-slate-100">
+                <!-- Rodapé do Card: Controles Reativos -->
+                <div class="px-5 pb-5 pt-2">
                   <button
                     v-if="!cart[item.id]"
                     type="button"
                     @click="addItem(item)"
-                    class="w-full py-2.5 px-4 rounded-xl bg-ld-red hover:bg-ld-redDark text-white font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-xs hover:shadow cursor-pointer"
+                    class="btn-glow-red w-full py-3 px-4 rounded-xl text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <i class="fa-solid fa-plus text-xs"></i>
                     <span>Adicionar ({{ item.defaultQty || 1 }} {{ item.unit }})</span>
                   </button>
 
-                  <div v-else class="flex items-center justify-between gap-2">
-                    <div class="flex items-center bg-red-50 rounded-full p-1 border border-red-200">
+                  <div v-else class="flex items-center justify-between gap-2 bg-white/10 border border-ld-red/60 rounded-xl p-1.5">
+                    <div class="flex items-center bg-ld-navyDark rounded-lg p-0.5 border border-white/10">
                       <button
                         type="button"
                         @click="stepQty(item.id, -1)"
-                        class="w-8 h-8 rounded-full bg-white text-ld-red hover:bg-ld-red hover:text-white font-bold transition flex items-center justify-center shadow-2xs cursor-pointer"
+                        class="w-8 h-8 rounded-md text-white hover:bg-ld-red font-bold transition flex items-center justify-center cursor-pointer"
                         aria-label="Diminuir quantidade"
                       >
                         <i class="fa-solid fa-minus text-xs"></i>
@@ -444,21 +471,21 @@
                         max="999"
                         :value="cart[item.id]"
                         @change="onInputQty(item.id, $event)"
-                        class="w-11 text-center bg-transparent font-extrabold text-ld-navy text-sm focus:outline-none"
+                        class="w-11 text-center bg-transparent font-extrabold text-white text-sm focus:outline-none"
                         aria-label="Quantidade"
                       />
                       <button
                         type="button"
                         @click="stepQty(item.id, 1)"
-                        class="w-8 h-8 rounded-full bg-white text-ld-red hover:bg-ld-red hover:text-white font-bold transition flex items-center justify-center shadow-2xs cursor-pointer"
+                        class="w-8 h-8 rounded-md bg-ld-red text-white hover:bg-ld-redDark font-bold transition flex items-center justify-center cursor-pointer"
                         aria-label="Aumentar quantidade"
                       >
                         <i class="fa-solid fa-plus text-xs"></i>
                       </button>
                     </div>
-                    <div class="text-right">
+                    <div class="text-right pr-2">
                       <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Subtotal</span>
-                      <span class="text-sm font-extrabold text-ld-red">
+                      <span class="text-sm font-extrabold text-amber-400">
                         {{ item.price > 0 ? formatBRL(cart[item.id] * item.price) : 'Incluído' }}
                       </span>
                     </div>
@@ -471,6 +498,43 @@
         </div>
       </section>
 
+      <!-- LIGHTBOX DE AMPLIAÇÃO DE EQUIPAMENTO (VUE 3) -->
+      <div
+        v-if="lightboxItem"
+        @click="closeLightbox"
+        class="fixed inset-0 z-[60] bg-black/85 backdrop-blur-xs flex items-center justify-center p-4"
+      >
+        <div
+          @click.stop
+          class="relative max-w-md w-full bg-ld-navy border border-white/15 rounded-2xl overflow-hidden shadow-2xl p-4 text-white"
+        >
+          <button
+            type="button"
+            @click="closeLightbox"
+            class="absolute top-5 right-5 z-10 w-9 h-9 rounded-full bg-black/70 hover:bg-ld-red text-white flex items-center justify-center transition cursor-pointer"
+            aria-label="Fechar"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="rounded-xl overflow-hidden bg-ld-navyDark aspect-square">
+            <img :src="lightboxItem.image" :alt="lightboxItem.name" class="w-full h-full object-cover" />
+          </div>
+          <div class="mt-3.5 flex items-center justify-between gap-3">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-ld-red block">{{ lightboxItem.badge }}</span>
+              <h4 class="font-display font-bold text-base text-white">{{ lightboxItem.name }}</h4>
+            </div>
+            <button
+              type="button"
+              @click="addItem(lightboxItem); closeLightbox();"
+              class="shrink-0 px-4 py-2 rounded-xl btn-glow-red text-white font-bold text-xs cursor-pointer"
+            >
+              + Orçamento
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- =========================================================
            BARRA FLUTUANTE COMPACTA DO ORÇAMENTO (REATIVA VUE 3)
       ========================================================= -->
@@ -478,7 +542,7 @@
         :class="{ visible: hasAny }"
         class="sticky-budget-bar fixed bottom-5 left-4 right-24 sm:inset-x-4 z-40 max-w-xl mx-auto"
       >
-        <div class="bg-ld-navy text-white rounded-2xl p-3 sm:px-5 shadow-2xl border border-white/15 flex items-center justify-between gap-3">
+        <div class="bg-ld-navyDark text-white rounded-2xl p-3 sm:px-5 shadow-2xl border border-ld-red/50 flex items-center justify-between gap-3">
           <div class="min-w-0">
             <span class="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-300">
               {{ distinctCount }} {{ distinctCount === 1 ? 'item' : 'itens' }} ({{ totalItems }} un.)
@@ -504,7 +568,7 @@
       <div
         @click="closeDrawer"
         :class="{ open: isDrawerOpen }"
-        class="drawer-backdrop fixed inset-0 z-50 bg-slate-900/55 backdrop-blur-xs"
+        class="drawer-backdrop fixed inset-0 z-50 bg-slate-900/65 backdrop-blur-xs"
       ></div>
 
       <aside
@@ -512,16 +576,15 @@
         class="drawer-panel fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl flex flex-col"
         aria-label="Resumo do Orçamento"
       >
-        <!-- Header Drawer -->
-        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-ld-navy text-white">
           <div>
-            <h3 class="font-display text-lg font-extrabold text-ld-navy leading-none">Meu Orçamento</h3>
-            <p class="text-xs text-slate-500 mt-1">Revise os itens e envie pronto no WhatsApp</p>
+            <h3 class="font-display text-lg font-extrabold leading-none">Meu Orçamento</h3>
+            <p class="text-xs text-slate-300 mt-1">Revise os itens e envie pronto no WhatsApp</p>
           </div>
           <button
             type="button"
             @click="closeDrawer"
-            class="w-9 h-9 rounded-full bg-white text-slate-500 hover:text-ld-navy border border-slate-200 flex items-center justify-center cursor-pointer"
+            class="w-9 h-9 rounded-full bg-white/10 text-white hover:bg-white/20 flex items-center justify-center cursor-pointer"
             aria-label="Fechar"
           >
             <i class="fa-solid fa-xmark"></i>
@@ -738,7 +801,7 @@
          SEÇÃO CTA FINAL (COM RESPIRO E DIVISÓRIA BRANCA ANTES DO RODAPÉ)
     ========================================================= -->
     <section class="py-12 sm:py-16 bg-white border-t border-slate-200/70 px-4 sm:px-6">
-      <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-ld-navy via-ld-navyLight to-ld-red text-white text-center px-6 py-10 sm:py-12 shadow-xl">
+      <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-ld-navyDark via-ld-navy to-ld-red text-white text-center px-6 py-10 sm:py-12 shadow-xl">
         <h2 class="font-display text-xl sm:text-2xl font-extrabold mb-2">
           Precisa regularizar os extintores da sua empresa?
         </h2>
@@ -760,7 +823,7 @@
   <!-- =========================================================
        FOOTER (ANCORADO NA BASE SEM BARRA BRANCA SOBRANDO EMBAIXO)
   ========================================================= -->
-  <footer class="mt-auto bg-ld-navy text-slate-300 pt-10 pb-8 border-t border-slate-200">
+  <footer class="mt-auto bg-ld-navyDark text-slate-300 pt-10 pb-8 border-t border-white/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
         <div class="flex items-center gap-3.5 text-center md:text-left">
@@ -835,7 +898,7 @@
 
   <!-- Toast de Feedback -->
   <div id="toast-notification" class="toast-msg fixed top-24 right-4 z-50 pointer-events-none">
-    <div class="bg-ld-navy text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 border border-white/10">
+    <div class="bg-ld-navyDark text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 border border-ld-red/50">
       <i class="fa-solid fa-circle-check text-emerald-400"></i>
       <span id="toast-text">Item adicionado!</span>
     </div>

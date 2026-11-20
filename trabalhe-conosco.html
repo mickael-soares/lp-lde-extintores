@@ -46,6 +46,7 @@
           colors: {
             ld: {
               navy: '#0B192C',
+              navyDark: '#07101D',
               navyLight: '#152C4A',
               red: '#DC2626',
               redDark: '#B91C1C',
@@ -65,41 +66,41 @@
 <body class="font-sans text-ld-ink bg-white selection:bg-ld-red selection:text-white min-h-screen flex flex-col">
 
   <!-- =========================================================
-       HEADER FIXO (NAVEGAÇÃO MULTIPÁGINA CLEAN)
+       HEADER FIXO INDUSTRIAL DARK
   ========================================================= -->
-  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+  <header class="sticky top-0 z-40 bg-ld-navyDark/95 backdrop-blur-md border-b border-white/10 text-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
       <!-- Marca / Monograma Vetorial LD -->
       <a href="index.html" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-ld-navy flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+        <div class="w-11 h-11 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center shadow-sm group-hover:scale-105 transition">
           <svg viewBox="0 0 64 64" class="w-8 h-8" aria-hidden="true">
             <path d="M14 13v38h20v-8.5H23.5V13H14z" fill="#FFFFFF"/>
             <path d="M29 13h8.5C49 13 56 20.8 56 32s-7 19-18.5 19H29v-8.5h8c6.6 0 10.5-4.3 10.5-10.5S43.6 21.5 37 21.5h-8V13z" fill="#DC2626"/>
           </svg>
         </div>
         <div class="leading-tight">
-          <span class="block font-display text-lg sm:text-xl font-extrabold tracking-tight text-ld-navy leading-none">
+          <span class="block font-display text-lg sm:text-xl font-extrabold tracking-tight text-white leading-none">
             LD <span class="text-ld-red">EXTINTORES</span>
           </span>
-          <span class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500 mt-1">
+          <span class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-400 mt-1">
             Bom Jesus - PI e Região
           </span>
         </div>
       </a>
 
       <!-- Navegação Desktop Multipágina -->
-      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
-        <a href="index.html#catalogo" class="hover:text-ld-red transition">Catálogo &amp; Orçamento</a>
-        <a href="index.html#duvidas" class="hover:text-ld-red transition">Dúvidas</a>
-        <a href="sobre.html" class="hover:text-ld-red transition">A Empresa</a>
-        <a href="trabalhe-conosco.html" class="text-ld-red font-bold transition">Trabalhe Conosco</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-300">
+        <a href="index.html#catalogo" class="hover:text-white transition">Catálogo &amp; Orçamento</a>
+        <a href="index.html#duvidas" class="hover:text-white transition">Dúvidas</a>
+        <a href="sobre.html" class="hover:text-white transition">A Empresa</a>
+        <a href="trabalhe-conosco.html" class="text-white font-bold transition">Trabalhe Conosco</a>
       </nav>
 
       <!-- Ações Header -->
       <div class="flex items-center gap-2.5">
         <a
           href="index.html#catalogo"
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-red-50 hover:bg-red-100 text-ld-red font-bold text-xs sm:text-sm border border-red-200 transition"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl btn-glow-red text-white font-bold text-xs sm:text-sm transition"
         >
           <i class="fa-solid fa-calculator"></i>
           <span class="hidden sm:inline">Simular Orçamento</span>
@@ -108,7 +109,7 @@
         <button
           id="mobile-menu-btn"
           type="button"
-          class="lg:hidden w-10 h-10 rounded-full bg-slate-100 text-ld-navy flex items-center justify-center"
+          class="lg:hidden w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center"
           aria-label="Abrir menu"
         >
           <i class="fa-solid fa-bars"></i>
@@ -117,10 +118,10 @@
     </div>
 
     <!-- Menu Mobile -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 text-sm font-semibold text-slate-700">
-      <a href="index.html#catalogo" class="block py-1 hover:text-ld-red">Catálogo &amp; Orçamento</a>
-      <a href="index.html#duvidas" class="block py-1 hover:text-ld-red">Dúvidas Frequentes</a>
-      <a href="sobre.html" class="block py-1 hover:text-ld-red">A Empresa (Sobre Nós)</a>
+    <div id="mobile-menu" class="hidden lg:hidden bg-ld-navy border-t border-white/10 px-6 py-4 space-y-3 text-sm font-semibold text-slate-200">
+      <a href="index.html#catalogo" class="block py-1 hover:text-white">Catálogo &amp; Orçamento</a>
+      <a href="index.html#duvidas" class="block py-1 hover:text-white">Dúvidas Frequentes</a>
+      <a href="sobre.html" class="block py-1 hover:text-white">A Empresa (Sobre Nós)</a>
       <a href="trabalhe-conosco.html" class="block py-1 text-ld-red font-bold">Trabalhe Conosco</a>
     </div>
   </header>

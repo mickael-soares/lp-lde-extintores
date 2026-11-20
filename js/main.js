@@ -14,24 +14,59 @@ const CONFIG = {
   email: 'ldextintoreseequipamentos@gmail.com',
   address: 'Rua Marechal Deodoro da Fonseca, 475 - Bairro São Pedro, Bom Jesus - PI',
   cnpj: '40.940.673/0001-46',
-  storageKey: 'ld_extintores_budget_v3'
+  storageKey: 'ld_extintores_budget_v4'
 };
 
 // =========================================================================
-// CATÁLOGO CLEAN & OBJETIVO
+// CLASSES DE INCÊNDIO INTERATIVAS (SELETOR TÉCNICO)
+// =========================================================================
+const FIRE_CLASSES_DATA = [
+  {
+    id: 'classe-a',
+    code: 'CLASSE A',
+    title: 'Sólidos Combustíveis (Madeira, Papel, Tecidos e Algodão)',
+    desc: 'Queimam em superfície e profundidade deixando resíduos (brasas). Exigem resfriamento rápido ou abafamento químico.',
+    recommended: 'Água Pressurizada 10L ou Pó Químico ABC',
+    icon: 'fa-box-archive',
+    targetCategory: 'extintores-novos'
+  },
+  {
+    id: 'classe-b',
+    code: 'CLASSE B',
+    title: 'Líquidos e Gases Inflamáveis (Gasolina, Diesel, Óleos e Álcool)',
+    desc: 'Queimam apenas na superfície e nunca devem ser combatidos com água pura. Exigem inibição química da cadeia de fogo.',
+    recommended: 'Pó Químico ABC, Pó BC ou Carreta 50kg',
+    icon: 'fa-gas-pump',
+    targetCategory: 'extintores-novos'
+  },
+  {
+    id: 'classe-c',
+    code: 'CLASSE C',
+    title: 'Equipamentos Elétricos Energizados (Quadros, Servidores e Motores)',
+    desc: 'Incêndios em instalações elétricas exigem agentes não condutores de eletricidade que protejam o operador e os circuitos.',
+    recommended: 'Dióxido de Carbono (CO₂) ou Pó ABC / BC',
+    icon: 'fa-bolt',
+    targetCategory: 'extintores-novos'
+  }
+];
+
+// =========================================================================
+// CATÁLOGO INDUSTRIAL COM FOTOS DE ESTÚDIO & ESPECIFICAÇÕES
 // =========================================================================
 const CATALOG_CATEGORIES = [
   {
     id: 'extintores-novos',
     label: 'Extintores Novos',
     icon: 'fa-fire-extinguisher',
-    subtitle: 'Extintores novos com Selo INMETRO e suporte de parede incluso',
+    subtitle: 'Extintores novos certificados pelo INMETRO com suporte de fixação incluso',
     items: [
       {
         id: 'ext-abc-4kg',
         name: 'Extintor Pó ABC 4kg',
         subtitle: 'Classes A, B e C • Multipropósito',
-        badge: 'Mais Vendido',
+        badge: 'MAIS VENDIDO',
+        specTag: 'INMETRO • 5 ANOS',
+        image: 'images/extintor-abc.jpg',
         featured: true,
         price: 185.00,
         unit: 'un.',
@@ -45,7 +80,9 @@ const CATALOG_CATEGORIES = [
         id: 'ext-abc-6kg',
         name: 'Extintor Pó ABC 6kg',
         subtitle: 'Classes A, B e C • Alta Capacidade',
-        badge: 'Empresas & Galpões',
+        badge: 'GALPÕES & EMPRESAS',
+        specTag: 'ALTA CAPACIDADE',
+        image: 'images/extintor-abc.jpg',
         price: 225.00,
         unit: 'un.',
         defaultQty: 2,
@@ -58,7 +95,9 @@ const CATALOG_CATEGORIES = [
         id: 'ext-agua-10l',
         name: 'Extintor Água 10L',
         subtitle: 'Classe A • Papel, Madeira e Tecidos',
-        badge: 'Classe A',
+        badge: 'CLASSE A',
+        specTag: 'CILINDRO 10L',
+        image: 'images/extintor-abc.jpg',
         price: 195.00,
         unit: 'un.',
         defaultQty: 1,
@@ -70,21 +109,25 @@ const CATALOG_CATEGORIES = [
       {
         id: 'ext-co2-6kg',
         name: 'Extintor CO₂ 6kg',
-        subtitle: 'Classes B e C • Sem Resíduos',
-        badge: 'Elétrica & TI',
+        subtitle: 'Classes B e C • Agente Limpo',
+        badge: 'ELÉTRICA & TI',
+        specTag: 'ZERO RESÍDUOS',
+        image: 'images/extintor-co2.jpg',
         price: 590.00,
         unit: 'un.',
         defaultQty: 1,
         features: [
           'Não danifica eletrônicos nem servidores',
-          'Alta pressão com selo INMETRO'
+          'Alta pressão com difusor e selo INMETRO'
         ]
       },
       {
         id: 'ext-bc-4kg',
         name: 'Extintor Pó BC 4kg',
         subtitle: 'Classes B e C • Líquidos e Elétricos',
-        badge: 'Oficinas & Postos',
+        badge: 'OFICINAS & POSTOS',
+        specTag: 'CLASSE B / C',
+        image: 'images/extintor-abc.jpg',
         price: 165.00,
         unit: 'un.',
         defaultQty: 1,
@@ -97,7 +140,9 @@ const CATALOG_CATEGORIES = [
         id: 'ext-carreta-50kg',
         name: 'Extintor Sobre Rodas ABC 50kg',
         subtitle: 'Carreta Industrial • Alto Risco',
-        badge: 'Agronegócio',
+        badge: 'AGRONEGÓCIO',
+        specTag: 'CARRETA 50KG',
+        image: 'images/extintor-carreta.jpg',
         price: 1890.00,
         unit: 'un.',
         defaultQty: 1,
@@ -112,13 +157,15 @@ const CATALOG_CATEGORIES = [
     id: 'recarga-manutencao',
     label: 'Recarga & Manutenção',
     icon: 'fa-rotate',
-    subtitle: 'Manutenção anual certificada com selo INMETRO, lacre e anel do ano',
+    subtitle: 'Manutenção Nível 2 e 3 certificada com selo INMETRO, lacre e anel do ano',
     items: [
       {
         id: 'rec-agua-10l',
         name: 'Recarga Extintor Água 10L',
         subtitle: 'Manutenção Anual • Classe A',
-        badge: 'Mais Solicitado',
+        badge: 'MAIS SOLICITADO',
+        specTag: 'VALIDADE 12 MESES',
+        image: 'images/extintor-abc.jpg',
         featured: true,
         price: 75.00,
         unit: 'recarga',
@@ -132,7 +179,9 @@ const CATALOG_CATEGORIES = [
         id: 'rec-abc-4kg',
         name: 'Recarga Extintor Pó ABC 4kg',
         subtitle: 'Manutenção Anual • Pó ABC',
-        badge: 'Padrão Comercial',
+        badge: 'PADRÃO COMERCIAL',
+        specTag: 'SELO INMETRO',
+        image: 'images/extintor-abc.jpg',
         featured: true,
         price: 95.00,
         unit: 'recarga',
@@ -146,7 +195,9 @@ const CATALOG_CATEGORIES = [
         id: 'rec-abc-6kg',
         name: 'Recarga Extintor Pó ABC 6kg',
         subtitle: 'Manutenção Anual • Pó ABC 6kg',
-        badge: 'Galpões & Lojas',
+        badge: 'GALPÕES & LOJAS',
+        specTag: 'SELO INMETRO',
+        image: 'images/extintor-abc.jpg',
         price: 115.00,
         unit: 'recarga',
         defaultQty: 2,
@@ -159,7 +210,9 @@ const CATALOG_CATEGORIES = [
         id: 'rec-bc-4kg',
         name: 'Recarga Extintor Pó BC 4kg / 6kg',
         subtitle: 'Manutenção Anual • Pó BC',
-        badge: 'Custo-Benefício',
+        badge: 'CUSTO-BENEFÍCIO',
+        specTag: 'VALIDADE 12 MESES',
+        image: 'images/extintor-abc.jpg',
         price: 85.00,
         unit: 'recarga',
         defaultQty: 2,
@@ -172,7 +225,9 @@ const CATALOG_CATEGORIES = [
         id: 'rec-co2-6kg',
         name: 'Recarga Extintor CO₂ 6kg',
         subtitle: 'Dióxido de Carbono Alta Pressão',
-        badge: 'Alta Pressão',
+        badge: 'ALTA PRESSÃO',
+        specTag: 'CO₂ PURO',
+        image: 'images/extintor-co2.jpg',
         price: 160.00,
         unit: 'recarga',
         defaultQty: 1,
@@ -185,7 +240,9 @@ const CATALOG_CATEGORIES = [
         id: 'teste-hidrostatico',
         name: 'Teste Hidrostático do Cilindro',
         subtitle: 'Obrigatório a cada 5 anos (Nível 3)',
-        badge: 'Norma ABNT',
+        badge: 'NORMA ABNT',
+        specTag: 'CICLO 5 ANOS',
+        image: 'images/extintor-carreta.jpg',
         price: 45.00,
         unit: 'cilindro',
         defaultQty: 2,
@@ -198,15 +255,17 @@ const CATALOG_CATEGORIES = [
   },
   {
     id: 'sinalizacao',
-    label: 'Placas de Sinalização',
+    label: 'Placas NBR 13434',
     icon: 'fa-signs-post',
-    subtitle: 'Placas fotoluminescentes em PVC antichama (padrão NBR 13434)',
+    subtitle: 'Placas fotoluminescentes em PVC antichama homologadas conforme NBR 13434',
     items: [
       {
         id: 'placa-extintor',
         name: 'Placa Fotoluminescente "Extintor"',
         subtitle: 'PVC Rígido • Brilha no Escuro',
-        badge: 'Obrigatória',
+        badge: 'OBRIGATÓRIA',
+        specTag: 'NBR 13434 • E5',
+        image: 'images/placas-sinalizacao.jpg',
         featured: true,
         price: 18.00,
         unit: 'un.',
@@ -220,7 +279,9 @@ const CATALOG_CATEGORIES = [
         id: 'placa-rota-saida',
         name: 'Placa "Saída de Emergência"',
         subtitle: 'Fotoluminescente Verde • Rota de Fuga',
-        badge: 'Rota de Fuga',
+        badge: 'ROTA DE FUGA',
+        specTag: 'NBR 13434 • S1/S2',
+        image: 'images/placas-sinalizacao.jpg',
         price: 22.00,
         unit: 'un.',
         defaultQty: 3,
@@ -233,7 +294,9 @@ const CATALOG_CATEGORIES = [
         id: 'placa-hidrante',
         name: 'Placa Fotoluminescente "Hidrante"',
         subtitle: 'Sinalização de Abrigo e Mangueira',
-        badge: 'Combate',
+        badge: 'COMBATE',
+        specTag: 'NBR 13434 • E9',
+        image: 'images/placas-sinalizacao.jpg',
         price: 20.00,
         unit: 'un.',
         defaultQty: 2,
@@ -246,7 +309,9 @@ const CATALOG_CATEGORIES = [
         id: 'placa-risco-inflamavel',
         name: 'Placa Alerta (Inflamáveis / Tóxico)',
         subtitle: 'Produtos Inflamáveis • Material Tóxico',
-        badge: 'Alerta NR-26',
+        badge: 'ALERTA NR-26',
+        specTag: 'PADRÃO NR-26',
+        image: 'images/placas-sinalizacao.jpg',
         price: 24.00,
         unit: 'un.',
         defaultQty: 2,
@@ -259,7 +324,9 @@ const CATALOG_CATEGORIES = [
         id: 'demarcacao-solo',
         name: 'Demarcação de Solo (1m x 1m)',
         subtitle: 'Adesivo Vermelho e Amarelo de Piso',
-        badge: 'Piso Comercial',
+        badge: 'PISO COMERCIAL',
+        specTag: 'ANTIDERRAPANTE',
+        image: 'images/placas-sinalizacao.jpg',
         price: 65.00,
         unit: 'un.',
         defaultQty: 2,
@@ -274,27 +341,15 @@ const CATALOG_CATEGORIES = [
     id: 'iluminacao-acessorios',
     label: 'Luminárias & Suportes',
     icon: 'fa-lightbulb',
-    subtitle: 'Luminárias de emergência LED autônomas e suportes para extintores',
+    subtitle: 'Luminárias de emergência LED autônomas (até 1.200 lúmens) e suportes',
     items: [
-      {
-        id: 'lum-30leds',
-        name: 'Luminária de Emergência 30 LEDs',
-        subtitle: 'Autônoma Bivolt • Até 6h de Duração',
-        badge: 'Mais Vendida',
-        featured: true,
-        price: 38.00,
-        unit: 'un.',
-        defaultQty: 4,
-        features: [
-          'Acende automaticamente na queda de energia',
-          'Ideal para lojas, corredores e recepções'
-        ]
-      },
       {
         id: 'lum-1200-blumenau',
         name: 'Luminária Blumenau 1.200 Lúmens',
         subtitle: '2 Faróis Direcionáveis • Alta Potência',
-        badge: 'Galpões & Fazendas',
+        badge: 'GALPÕES & FAZENDAS',
+        specTag: '1.200 LÚMENS',
+        image: 'images/luminaria-emergencia.jpg',
         featured: true,
         price: 165.00,
         unit: 'un.',
@@ -305,10 +360,28 @@ const CATALOG_CATEGORIES = [
         ]
       },
       {
+        id: 'lum-30leds',
+        name: 'Luminária de Emergência 30 LEDs',
+        subtitle: 'Autônoma Bivolt • Até 6h de Duração',
+        badge: 'MAIS VENDIDA',
+        specTag: 'BIVOLT • 30 LEDS',
+        image: 'images/luminaria-emergencia.jpg',
+        featured: true,
+        price: 38.00,
+        unit: 'un.',
+        defaultQty: 4,
+        features: [
+          'Acende automaticamente na queda de energia',
+          'Ideal para lojas, corredores e recepções'
+        ]
+      },
+      {
         id: 'suporte-tripe',
         name: 'Suporte de Piso Tripé Cromado',
         subtitle: 'Para Extintores de 4kg, 6kg e 10L',
-        badge: 'Sem Furar Parede',
+        badge: 'SEM FURAR PAREDE',
+        specTag: 'AÇO TRATADO',
+        image: 'images/extintor-abc.jpg',
         price: 55.00,
         unit: 'un.',
         defaultQty: 2,
@@ -321,7 +394,9 @@ const CATALOG_CATEGORIES = [
         id: 'abrigo-extintor',
         name: 'Caixa Abrigo para Extintor',
         subtitle: 'Proteção contra Sol, Chuva e Poeira',
-        badge: 'Área Externa',
+        badge: 'ÁREA EXTERNA',
+        specTag: 'ANTICORROSIVO',
+        image: 'images/extintor-carreta.jpg',
         price: 180.00,
         unit: 'un.',
         defaultQty: 1,
@@ -342,7 +417,9 @@ const CATALOG_CATEGORIES = [
         id: 'kit-comercio-essencial',
         name: 'Kit Comércio Essencial',
         subtitle: '2 Extintores ABC 4kg + 3 Placas + 2 Luminárias',
-        badge: 'Combo Loja',
+        badge: 'COMBO LOJA',
+        specTag: 'PRONTO P/ VISTORIA',
+        image: 'images/extintor-abc.jpg',
         featured: true,
         price: 460.00,
         unit: 'kit',
@@ -356,7 +433,9 @@ const CATALOG_CATEGORIES = [
         id: 'kit-galpao-agro',
         name: 'Kit Galpão & Agronegócio',
         subtitle: '4 Extintores + 2 Luminárias 1.200lm + 6 Placas',
-        badge: 'Combo Agro',
+        badge: 'COMBO AGRO',
+        specTag: 'ALTA COBERTURA',
+        image: 'images/extintor-carreta.jpg',
         price: 1290.00,
         unit: 'kit',
         defaultQty: 1,
@@ -369,7 +448,9 @@ const CATALOG_CATEGORIES = [
         id: 'visita-inspecao',
         name: 'Visita Técnica & Coleta no Local',
         subtitle: 'Avaliação presencial dos seus extintores',
-        badge: 'Bom Jesus e Região',
+        badge: 'BOM JESUS E REGIÃO',
+        specTag: 'ATENDIMENTO IN LOCO',
+        image: 'images/hero-industrial.jpg',
         price: 0.00,
         priceLabel: 'Sob Consulta',
         unit: 'visita',
@@ -420,7 +501,7 @@ function showToast(message) {
 }
 
 // =========================================================================
-// APP VUE 3 #1: SIMULADOR DE ORÇAMENTO & CATÁLOGO (index.html)
+// APP VUE 3 #1: SIMULADOR DE ORÇAMENTO & CATÁLOGO INDUSTRIAL (index.html)
 // =========================================================================
 function mountCatalogVueApp() {
   const mountEl = document.getElementById('ld-catalog-app');
@@ -432,7 +513,10 @@ function mountCatalogVueApp() {
     setup() {
       const categories = ref(CATALOG_CATEGORIES);
       const activeCategory = ref(CATALOG_CATEGORIES[0].id);
+      const fireClasses = ref(FIRE_CLASSES_DATA);
+      const activeFireClassId = ref(FIRE_CLASSES_DATA[0].id);
       const isDrawerOpen = ref(false);
+      const lightboxItem = ref(null);
       const cart = reactive({}); // { [itemId]: qty }
       const customer = reactive({
         name: '',
@@ -461,7 +545,6 @@ function mountCatalogVueApp() {
         // ignore
       }
 
-      // Persistir alterações automaticamente
       watch(
         () => ({ cart: { ...cart }, customer: { ...customer } }),
         val => {
@@ -477,6 +560,10 @@ function mountCatalogVueApp() {
 
       const currentCategory = computed(
         () => categories.value.find(c => c.id === activeCategory.value) || categories.value[0]
+      );
+
+      const currentFireClass = computed(
+        () => fireClasses.value.find(f => f.id === activeFireClassId.value) || fireClasses.value[0]
       );
 
       const cartEntries = computed(() => {
@@ -514,6 +601,14 @@ function mountCatalogVueApp() {
 
       function selectCategory(catId) {
         activeCategory.value = catId;
+      }
+
+      function openLightbox(item) {
+        lightboxItem.value = item;
+      }
+
+      function closeLightbox() {
+        lightboxItem.value = null;
       }
 
       function addItem(item) {
@@ -619,7 +714,10 @@ function mountCatalogVueApp() {
           activeCategory.value = catId;
         };
         document.addEventListener('keydown', e => {
-          if (e.key === 'Escape' && isDrawerOpen.value) closeDrawer();
+          if (e.key === 'Escape') {
+            if (lightboxItem.value) closeLightbox();
+            else if (isDrawerOpen.value) closeDrawer();
+          }
         });
       });
 
@@ -627,6 +725,10 @@ function mountCatalogVueApp() {
         categories,
         activeCategory,
         currentCategory,
+        fireClasses,
+        activeFireClassId,
+        currentFireClass,
+        lightboxItem,
         cart,
         customer,
         isDrawerOpen,
@@ -639,6 +741,8 @@ function mountCatalogVueApp() {
         formatBRL,
         getCategoryCount,
         selectCategory,
+        openLightbox,
+        closeLightbox,
         addItem,
         stepQty,
         onInputQty,
@@ -783,7 +887,7 @@ function mountJobsVueApp() {
 }
 
 // =========================================================================
-// INICIALIZAÇÃO GERAL (Menu, FAQ e Observers)
+// INICIALIZAÇÃO GERAL
 // =========================================================================
 document.addEventListener('DOMContentLoaded', () => {
   mountCatalogVueApp();
