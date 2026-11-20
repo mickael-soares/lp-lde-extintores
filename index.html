@@ -1,0 +1,848 @@
+<!--
+  =============================================================
+  Projeto: LD Extintores e Equipamentos - Home & Simulador
+  Instagram: @ldextintores.bj
+  Empresa: LD EXTINTORES E EQUIPAMENTOS LTDA (CNPJ: 40.940.673/0001-46)
+  Localização: Rua Marechal Deodoro da Fonseca, 475 - São Pedro, Bom Jesus - PI
+  Desenvolvido por: Mickael Soares
+  GitHub / Portfólio: https://github.com/mickael-soares
+  Ano: 2026 • Todos os direitos reservados.
+  =============================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LD Extintores e Equipamentos | Venda, Recarga e Manutenção em Bom Jesus - PI</title>
+  <meta name="description" content="LD Extintores e Equipamentos em Bom Jesus - PI e região. Venda, recarga e manutenção certificada de extintores (ABC, Água, CO2, BC), placas de sinalização fotoluminescentes e luminárias de emergência LED. Simule seu orçamento online!">
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="BR-PI">
+  <meta name="geo.placename" content="Bom Jesus">
+  <meta name="author" content="Mickael Soares">
+
+  <!-- Favicon SVG Monograma LD -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B192C'/%3E%3Cpath d='M16 14v36h18v-8H25V14h-9z' fill='%23FFFFFF'/%3E%3Cpath d='M30 14h8c11 0 18 7.5 18 18s-7 18-18 18h-8v-8h7.5c6.2 0 10.5-4.2 10.5-10s-4.3-10-10.5-10H30v-8z' fill='%23DC2626'/%3E%3C/svg%3E">
+
+  <!-- Open Graph / WhatsApp Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LD Extintores e Equipamentos | Venda, Recarga e Manutenção em Bom Jesus - PI">
+  <meta property="og:description" content="Prevenir é proteger! Extintores novos, recarga certificada INMETRO, placas de sinalização e luminárias de emergência em Bom Jesus - PI e região.">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="LD Extintores e Equipamentos">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Montserrat + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Montserrat"', 'system-ui', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ld: {
+              navy: '#0B192C',
+              navyLight: '#152C4A',
+              red: '#DC2626',
+              redDark: '#B91C1C',
+              redSoft: '#FEF2F2',
+              amber: '#F59E0B',
+              slate: '#F8FAFC',
+              ink: '#0F172A'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Dados Estruturados Schema.org (LocalBusiness) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "LD Extintores e Equipamentos",
+    "legalName": "LD Extintores e Equipamentos Ltda",
+    "taxID": "40.940.673/0001-46",
+    "description": "Venda, recarga e manutenção certificada de extintores de incêndio, placas de sinalização fotoluminescentes e luminárias de emergência em Bom Jesus - PI e região.",
+    "telephone": "+55-89-98121-7813",
+    "email": "ldextintoreseequipamentos@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Marechal Deodoro da Fonseca, 475",
+      "addressNeighborhood": "São Pedro",
+      "addressLocality": "Bom Jesus",
+      "addressRegion": "PI",
+      "postalCode": "64900-000",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://www.instagram.com/ldextintores.bj/"
+    ],
+    "openingHours": "Mo-Sa 08:00-18:00"
+  }
+  </script>
+</head>
+<body class="font-sans text-ld-ink bg-white selection:bg-ld-red selection:text-white min-h-screen flex flex-col">
+
+  <!-- =========================================================
+       HEADER FIXO (NAVEGAÇÃO MULTIPÁGINA CLEAN)
+  ========================================================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <!-- Marca / Monograma Vetorial LD -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-ld-navy flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+          <svg viewBox="0 0 64 64" class="w-8 h-8" aria-hidden="true">
+            <path d="M14 13v38h20v-8.5H23.5V13H14z" fill="#FFFFFF"/>
+            <path d="M29 13h8.5C49 13 56 20.8 56 32s-7 19-18.5 19H29v-8.5h8c6.6 0 10.5-4.3 10.5-10.5S43.6 21.5 37 21.5h-8V13z" fill="#DC2626"/>
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <span class="block font-display text-lg sm:text-xl font-extrabold tracking-tight text-ld-navy leading-none">
+            LD <span class="text-ld-red">EXTINTORES</span>
+          </span>
+          <span class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500 mt-1">
+            Bom Jesus - PI e Região
+          </span>
+        </div>
+      </a>
+
+      <!-- Navegação Desktop Multipágina -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="#catalogo" class="text-ld-red font-bold transition">Catálogo &amp; Orçamento</a>
+        <a href="#duvidas" class="hover:text-ld-red transition">Dúvidas</a>
+        <a href="sobre.html" class="hover:text-ld-red transition">A Empresa</a>
+        <a href="trabalhe-conosco.html" class="hover:text-ld-red transition">Trabalhe Conosco</a>
+      </nav>
+
+      <!-- Ações Header -->
+      <div class="flex items-center gap-2.5">
+        <button
+          type="button"
+          onclick="openBudgetDrawer()"
+          class="relative inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-red-50 hover:bg-red-100 text-ld-red font-bold text-xs sm:text-sm border border-red-200 transition cursor-pointer"
+        >
+          <i class="fa-solid fa-clipboard-list"></i>
+          <span class="hidden sm:inline">Meu Orçamento</span>
+          <span id="header-budget-badge" class="hidden absolute -top-1.5 -right-1.5 min-w-[20px] h-[20px] px-1 rounded-full bg-ld-navy text-white text-[11px] font-extrabold flex items-center justify-center shadow">0</span>
+        </button>
+
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="lg:hidden w-10 h-10 rounded-full bg-slate-100 text-ld-navy flex items-center justify-center"
+          aria-label="Abrir menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 text-sm font-semibold text-slate-700">
+      <a href="#catalogo" class="block py-1 text-ld-red font-bold">Catálogo &amp; Orçamento</a>
+      <a href="#duvidas" class="block py-1 hover:text-ld-red">Dúvidas Frequentes</a>
+      <a href="sobre.html" class="block py-1 hover:text-ld-red">A Empresa (Sobre Nós)</a>
+      <a href="trabalhe-conosco.html" class="block py-1 hover:text-ld-red">Trabalhe Conosco</a>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- =========================================================
+         HERO SECTION (CLEAN & DIRETO)
+    ========================================================= -->
+    <section id="inicio" class="bg-hero-industrial text-white relative overflow-hidden py-14 lg:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Coluna Texto -->
+        <div class="lg:col-span-7 fade-up">
+          <div class="flex flex-wrap items-center gap-2 mb-5">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-bold text-white">
+              <i class="fa-solid fa-location-dot text-ld-red"></i> Bom Jesus - PI e Região
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-ld-red/20 border border-ld-red/40 text-xs font-bold text-white">
+              <i class="fa-solid fa-certificate text-amber-400"></i> Registrada no INMETRO
+            </span>
+          </div>
+
+          <h1 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight tracking-tight">
+            Segurança não é detalhe. <span class="text-ld-red">Prevenir é proteger!</span>
+          </h1>
+
+          <p class="mt-3.5 text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
+            Venda, recarga e manutenção certificada de <strong class="text-white">extintores de incêndio</strong>, <strong class="text-white">placas fotoluminescentes</strong> e <strong class="text-white">luminárias de emergência LED</strong> para comércios, empresas, condomínios e fazendas.
+          </p>
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-3">
+            <a
+              href="#catalogo"
+              class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-ld-red hover:bg-ld-redDark text-white font-bold text-sm shadow-lg shadow-ld-red/25 transition"
+            >
+              <i class="fa-solid fa-calculator"></i>
+              <span>Simular Meu Orçamento</span>
+            </a>
+
+            <button
+              type="button"
+              onclick="openDirectWhatsApp()"
+              class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-white hover:bg-emerald-50 text-ld-navy font-bold text-sm shadow-sm transition cursor-pointer"
+            >
+              <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+              <span>Falar no WhatsApp</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Vitrine Rápida Hero (3 Atalhos Limpos) -->
+        <div class="lg:col-span-5 fade-up">
+          <div class="bg-white/10 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-white/15 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-white">Soluções Principais</span>
+              <span class="inline-flex items-center gap-1 text-[11px] font-bold text-amber-300 bg-white/10 px-2.5 py-1 rounded-full">
+                <i class="fa-solid fa-shield-halved text-[10px]"></i> Selo INMETRO
+              </span>
+            </div>
+
+            <div class="space-y-2.5">
+              <a href="#catalogo" class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition">
+                <div class="flex items-center gap-3">
+                  <span class="w-10 h-10 rounded-xl bg-ld-red text-white flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-fire-extinguisher"></i>
+                  </span>
+                  <div>
+                    <p class="font-bold text-white text-sm">Extintores Novos</p>
+                    <p class="text-xs text-slate-300">Pó ABC, Água 10L, CO₂ e BC</p>
+                  </div>
+                </div>
+                <span class="text-right shrink-0">
+                  <span class="block text-[10px] uppercase text-slate-400 font-bold">A partir de</span>
+                  <span class="text-sm font-extrabold text-amber-400">R$ 165</span>
+                </span>
+              </a>
+
+              <a href="#catalogo" onclick="window.selectCatalogCategory && window.selectCatalogCategory('recarga-manutencao')" class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition">
+                <div class="flex items-center gap-3">
+                  <span class="w-10 h-10 rounded-xl bg-white/15 text-amber-400 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-rotate"></i>
+                  </span>
+                  <div>
+                    <p class="font-bold text-white text-sm">Recarga &amp; Manutenção</p>
+                    <p class="text-xs text-slate-300">Selo INMETRO, lacre e anel do ano</p>
+                  </div>
+                </div>
+                <span class="text-right shrink-0">
+                  <span class="block text-[10px] uppercase text-slate-400 font-bold">A partir de</span>
+                  <span class="text-sm font-extrabold text-amber-400">R$ 75</span>
+                </span>
+              </a>
+
+              <a href="#catalogo" onclick="window.selectCatalogCategory && window.selectCatalogCategory('sinalizacao')" class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 transition">
+                <div class="flex items-center gap-3">
+                  <span class="w-10 h-10 rounded-xl bg-white/15 text-emerald-400 flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-lightbulb"></i>
+                  </span>
+                  <div>
+                    <p class="font-bold text-white text-sm">Placas &amp; Luminárias LED</p>
+                    <p class="text-xs text-slate-300">Sinalização NBR e Blumenau LED</p>
+                  </div>
+                </div>
+                <span class="text-right shrink-0">
+                  <span class="block text-[10px] uppercase text-slate-400 font-bold">A partir de</span>
+                  <span class="text-sm font-extrabold text-amber-400">R$ 18</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         FAIXA DE DIFERENCIAIS (4 PILARES COMPACTOS)
+    ========================================================= -->
+    <section class="py-8 bg-white border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="flex items-start gap-3">
+          <span class="w-10 h-10 rounded-xl bg-red-50 text-ld-red flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-medal"></i>
+          </span>
+          <div>
+            <h2 class="font-bold text-xs sm:text-sm text-ld-navy">Selo INMETRO</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Manutenção oficial com lacre e garantia.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <span class="w-10 h-10 rounded-xl bg-red-50 text-ld-red flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-truck-pickup"></i>
+          </span>
+          <div>
+            <h2 class="font-bold text-xs sm:text-sm text-ld-navy">Coleta &amp; Entrega</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Buscamos na sua empresa em Bom Jesus e região.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <span class="w-10 h-10 rounded-xl bg-red-50 text-ld-red flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-signs-post"></i>
+          </span>
+          <div>
+            <h2 class="font-bold text-xs sm:text-sm text-ld-navy">Linha Completa</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Extintores, placas e luminárias LED.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <span class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-file-shield"></i>
+          </span>
+          <div>
+            <h2 class="font-bold text-xs sm:text-sm text-ld-navy">Pronto p/ Vistoria</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Equipamentos dentro das normas ABNT.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         CATÁLOGO INTERATIVO & SIMULADOR DE ORÇAMENTO (VUE 3 LOCAL)
+    ========================================================= -->
+    <div id="ld-catalog-app" v-cloak>
+      <section id="catalogo" class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+          <!-- Cabeçalho da Seção -->
+          <div class="text-center max-w-2xl mx-auto mb-8 fade-up">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-ld-red font-bold text-xs uppercase tracking-wider">
+              <i class="fa-solid fa-fire-flame-curved"></i>
+              Catálogo &amp; Valores
+            </span>
+            <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy mt-2">
+              Simule seu Orçamento Online
+            </h2>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1">
+              Escolha a categoria abaixo, adicione os itens desejados e envie pronto para o nosso WhatsApp.
+            </p>
+          </div>
+
+          <!-- Abas de Categorias Reativas (Vue 3) -->
+          <div class="flex items-center lg:justify-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-4">
+            <button
+              v-for="cat in categories"
+              :key="cat.id"
+              type="button"
+              @click="selectCategory(cat.id)"
+              :class="activeCategory === cat.id ? 'active' : 'bg-white text-ld-navy border-slate-200 hover:border-ld-red/50 hover:bg-red-50/30'"
+              class="catalog-tab shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs sm:text-sm font-bold cursor-pointer select-none"
+            >
+              <i :class="['fa-solid', cat.icon, 'text-xs', activeCategory === cat.id ? 'text-white' : 'text-ld-red']"></i>
+              <span>{{ cat.label }}</span>
+              <span
+                v-if="getCategoryCount(cat) > 0"
+                :class="activeCategory === cat.id ? 'bg-white text-ld-red' : 'bg-ld-red text-white'"
+                class="px-1.5 py-0.5 text-[11px] font-extrabold rounded-full leading-none"
+              >
+                {{ getCategoryCount(cat) }}
+              </span>
+            </button>
+          </div>
+
+          <!-- Painel de Cards Reativo (Vue 3) -->
+          <div :key="activeCategory" class="catalog-panel-enter">
+            <p class="text-center text-xs sm:text-sm text-slate-500 mb-6">
+              {{ currentCategory.subtitle }}
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <article
+                v-for="item in currentCategory.items"
+                :key="item.id"
+                :class="[
+                  cart[item.id] > 0 ? 'in-cart' : '',
+                  item.featured && !cart[item.id] ? 'border-ld-red/35 ring-1 ring-ld-red/10' : 'border-slate-200/80'
+                ]"
+                class="product-card bg-white rounded-3xl border p-5 flex flex-col justify-between shadow-2xs"
+              >
+                <div>
+                  <div class="flex items-center justify-between gap-2 mb-3">
+                    <span
+                      :class="item.featured ? 'bg-ld-red text-white' : 'bg-slate-100 text-ld-navy'"
+                      class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider"
+                    >
+                      {{ item.badge }}
+                    </span>
+                    <span
+                      v-if="cart[item.id] > 0"
+                      class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full"
+                    >
+                      <i class="fa-solid fa-check text-[9px]"></i> No orçamento
+                    </span>
+                  </div>
+
+                  <h3 class="font-display font-bold text-sm sm:text-base text-ld-navy leading-snug">
+                    {{ item.name }}
+                  </h3>
+                  <p class="text-xs text-slate-500 mt-0.5">{{ item.subtitle }}</p>
+
+                  <div class="mt-4 flex items-baseline gap-1.5">
+                    <span class="text-2xl font-extrabold text-ld-navy">
+                      {{ item.priceLabel ? item.priceLabel : formatBRL(item.price) }}
+                    </span>
+                    <span v-if="item.price > 0" class="text-xs font-semibold text-slate-400">
+                      / {{ item.unit }}
+                    </span>
+                  </div>
+
+                  <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600">
+                    <li v-for="(feat, idx) in item.features" :key="idx" class="flex items-start gap-2">
+                      <i class="fa-solid fa-check text-ld-red mt-0.5 shrink-0 text-[11px]"></i>
+                      <span>{{ feat }}</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Controles Reativos do Card -->
+                <div class="mt-5 pt-4 border-t border-slate-100">
+                  <button
+                    v-if="!cart[item.id]"
+                    type="button"
+                    @click="addItem(item)"
+                    class="w-full py-2.5 px-4 rounded-xl bg-ld-red hover:bg-ld-redDark text-white font-semibold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-xs hover:shadow cursor-pointer"
+                  >
+                    <i class="fa-solid fa-plus text-xs"></i>
+                    <span>Adicionar ({{ item.defaultQty || 1 }} {{ item.unit }})</span>
+                  </button>
+
+                  <div v-else class="flex items-center justify-between gap-2">
+                    <div class="flex items-center bg-red-50 rounded-full p-1 border border-red-200">
+                      <button
+                        type="button"
+                        @click="stepQty(item.id, -1)"
+                        class="w-8 h-8 rounded-full bg-white text-ld-red hover:bg-ld-red hover:text-white font-bold transition flex items-center justify-center shadow-2xs cursor-pointer"
+                        aria-label="Diminuir quantidade"
+                      >
+                        <i class="fa-solid fa-minus text-xs"></i>
+                      </button>
+                      <input
+                        type="number"
+                        min="1"
+                        max="999"
+                        :value="cart[item.id]"
+                        @change="onInputQty(item.id, $event)"
+                        class="w-11 text-center bg-transparent font-extrabold text-ld-navy text-sm focus:outline-none"
+                        aria-label="Quantidade"
+                      />
+                      <button
+                        type="button"
+                        @click="stepQty(item.id, 1)"
+                        class="w-8 h-8 rounded-full bg-white text-ld-red hover:bg-ld-red hover:text-white font-bold transition flex items-center justify-center shadow-2xs cursor-pointer"
+                        aria-label="Aumentar quantidade"
+                      >
+                        <i class="fa-solid fa-plus text-xs"></i>
+                      </button>
+                    </div>
+                    <div class="text-right">
+                      <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Subtotal</span>
+                      <span class="text-sm font-extrabold text-ld-red">
+                        {{ item.price > 0 ? formatBRL(cart[item.id] * item.price) : 'Incluído' }}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =========================================================
+           BARRA FLUTUANTE COMPACTA DO ORÇAMENTO (REATIVA VUE 3)
+      ========================================================= -->
+      <div
+        :class="{ visible: hasAny }"
+        class="sticky-budget-bar fixed bottom-5 left-4 right-24 sm:inset-x-4 z-40 max-w-xl mx-auto"
+      >
+        <div class="bg-ld-navy text-white rounded-2xl p-3 sm:px-5 shadow-2xl border border-white/15 flex items-center justify-between gap-3">
+          <div class="min-w-0">
+            <span class="block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-300">
+              {{ distinctCount }} {{ distinctCount === 1 ? 'item' : 'itens' }} ({{ totalItems }} un.)
+            </span>
+            <span class="text-base sm:text-xl font-extrabold leading-tight text-amber-400">
+              {{ formattedTotal }}
+            </span>
+          </div>
+          <button
+            type="button"
+            @click="openDrawer"
+            class="shrink-0 inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-xs sm:text-sm transition shadow-lg cursor-pointer"
+          >
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Finalizar Orçamento</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- =========================================================
+           DRAWER LATERAL: MEU ORÇAMENTO -> WHATSAPP (REATIVO VUE 3)
+      ========================================================= -->
+      <div
+        @click="closeDrawer"
+        :class="{ open: isDrawerOpen }"
+        class="drawer-backdrop fixed inset-0 z-50 bg-slate-900/55 backdrop-blur-xs"
+      ></div>
+
+      <aside
+        :class="{ open: isDrawerOpen }"
+        class="drawer-panel fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-white shadow-2xl flex flex-col"
+        aria-label="Resumo do Orçamento"
+      >
+        <!-- Header Drawer -->
+        <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+          <div>
+            <h3 class="font-display text-lg font-extrabold text-ld-navy leading-none">Meu Orçamento</h3>
+            <p class="text-xs text-slate-500 mt-1">Revise os itens e envie pronto no WhatsApp</p>
+          </div>
+          <button
+            type="button"
+            @click="closeDrawer"
+            class="w-9 h-9 rounded-full bg-white text-slate-500 hover:text-ld-navy border border-slate-200 flex items-center justify-center cursor-pointer"
+            aria-label="Fechar"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Estado Vazio -->
+        <div v-if="!hasAny" class="flex-1 flex flex-col items-center justify-center p-8 text-center">
+          <div class="w-16 h-16 rounded-full bg-red-50 text-ld-red flex items-center justify-center mb-4">
+            <i class="fa-solid fa-fire-extinguisher text-2xl"></i>
+          </div>
+          <p class="font-bold text-ld-navy text-sm">Seu orçamento está vazio</p>
+          <p class="text-xs text-slate-500 mt-1 max-w-xs">
+            Adicione extintores, recargas, placas ou luminárias no catálogo para simular e enviar direto no WhatsApp.
+          </p>
+          <button
+            type="button"
+            @click="closeDrawer"
+            class="mt-5 px-5 py-2.5 rounded-xl bg-ld-red text-white text-xs font-bold cursor-pointer"
+          >
+            Ver Catálogo
+          </button>
+        </div>
+
+        <!-- Estado Preenchido -->
+        <div v-else class="flex-1 flex flex-col min-h-0">
+          <div class="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+            <div class="space-y-2.5">
+              <div
+                v-for="entry in cartEntries"
+                :key="entry.item.id"
+                class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3 flex items-center justify-between gap-2.5"
+              >
+                <div class="min-w-0 flex-1">
+                  <p class="font-bold text-ld-navy text-xs sm:text-sm leading-snug">{{ entry.item.name }}</p>
+                  <p class="text-[11px] text-slate-500">
+                    {{ entry.item.price > 0 ? formatBRL(entry.item.price) + ' / ' + entry.item.unit : 'Sob consulta' }}
+                  </p>
+                </div>
+
+                <div class="flex items-center gap-1.5 shrink-0">
+                  <div class="flex items-center bg-white border border-slate-200 rounded-full p-0.5">
+                    <button
+                      type="button"
+                      @click="stepQty(entry.item.id, -1)"
+                      class="w-6 h-6 rounded-full text-slate-500 hover:bg-red-50 hover:text-ld-red flex items-center justify-center text-[10px] cursor-pointer"
+                      aria-label="Diminuir"
+                    >
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <input
+                      type="number"
+                      min="1"
+                      max="999"
+                      :value="entry.qty"
+                      @change="onInputQty(entry.item.id, $event)"
+                      class="w-8 text-center text-xs font-bold text-ld-navy focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      @click="stepQty(entry.item.id, 1)"
+                      class="w-6 h-6 rounded-full text-slate-500 hover:bg-red-50 hover:text-ld-red flex items-center justify-center text-[10px] cursor-pointer"
+                      aria-label="Aumentar"
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+
+                  <span class="text-xs font-extrabold text-ld-navy min-w-[68px] text-right">
+                    {{ entry.item.price > 0 ? formatBRL(entry.subtotal) : 'Consulta' }}
+                  </span>
+
+                  <button
+                    type="button"
+                    @click="removeItem(entry.item.id)"
+                    class="text-slate-400 hover:text-rose-600 transition p-1 cursor-pointer"
+                    aria-label="Remover item"
+                  >
+                    <i class="fa-solid fa-trash-can text-xs"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dados opcionais enxutos (v-model) -->
+            <div class="pt-4 border-t border-slate-200 space-y-2.5">
+              <p class="text-[11px] font-extrabold uppercase tracking-wider text-ld-red">Dados Opcionais</p>
+              <div class="grid grid-cols-2 gap-2.5">
+                <input
+                  v-model="customer.name"
+                  type="text"
+                  placeholder="Seu nome"
+                  class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ld-red"
+                />
+                <input
+                  v-model="customer.company"
+                  type="text"
+                  placeholder="Empresa / Local"
+                  class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ld-red"
+                />
+              </div>
+              <div class="grid grid-cols-2 gap-2.5">
+                <input
+                  v-model="customer.city"
+                  type="text"
+                  placeholder="Cidade"
+                  class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ld-red"
+                />
+                <select
+                  v-model="customer.deliveryMode"
+                  class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:border-ld-red"
+                >
+                  <option value="Coleta / Entrega no Local">Coleta / Entrega</option>
+                  <option value="Retirada na Loja (São Pedro)">Retirada na Loja</option>
+                  <option value="Visita Técnica">Visita Técnica</option>
+                </select>
+              </div>
+              <textarea
+                v-model="customer.notes"
+                rows="2"
+                placeholder="Observações (opcional)"
+                class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ld-red resize-none"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Rodapé Drawer -->
+          <div class="p-5 border-t border-slate-200 bg-slate-50 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Total Estimado</span>
+              <span class="text-xl font-extrabold text-ld-navy">{{ formattedTotal }}</span>
+            </div>
+
+            <button
+              type="button"
+              @click="sendBudgetToWhatsApp"
+              class="w-full py-3.5 px-5 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-lg shadow-emerald-600/20 transition flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Enviar Orçamento no WhatsApp</span>
+            </button>
+
+            <button
+              type="button"
+              @click="clearBudget"
+              class="w-full py-1 text-xs font-semibold text-slate-400 hover:text-rose-500 transition cursor-pointer"
+            >
+              Limpar orçamento
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- =========================================================
+         FAQ RÁPIDO (3 DÚVIDAS DE COMPRA)
+    ========================================================= -->
+    <section id="duvidas" class="py-16 bg-white border-t border-slate-100">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-8 fade-up">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-ld-red">Tire Suas Dúvidas</span>
+          <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy mt-1">
+            Perguntas Frequentes
+          </h2>
+        </div>
+
+        <div class="space-y-3 fade-up">
+          <div class="faq-item open border border-slate-200/80 rounded-2xl bg-slate-50/60 px-5 py-4">
+            <button type="button" class="faq-trigger w-full text-left flex items-center justify-between gap-4 font-bold text-xs sm:text-sm text-ld-navy cursor-pointer">
+              <span>De quanto em quanto tempo devo fazer a recarga do extintor?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron text-ld-red text-xs transition-transform shrink-0"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="overflow-hidden">
+                <p class="pt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  A manutenção e recarga deve ser feita <strong>anualmente (a cada 12 meses)</strong> ou imediatamente caso o extintor seja utilizado, esteja com o ponteiro do manômetro na faixa vermelha ou sem lacre.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item border border-slate-200/80 rounded-2xl bg-slate-50/60 px-5 py-4">
+            <button type="button" class="faq-trigger w-full text-left flex items-center justify-between gap-4 font-bold text-xs sm:text-sm text-ld-navy cursor-pointer">
+              <span>Vocês buscam e entregam os extintores na minha empresa?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron text-ld-red text-xs transition-transform shrink-0"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="overflow-hidden">
+                <p class="pt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Sim! Realizamos coleta e entrega programada em <strong>Bom Jesus - PI e cidades da região</strong> para comércios, empresas, condomínios e fazendas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item border border-slate-200/80 rounded-2xl bg-slate-50/60 px-5 py-4">
+            <button type="button" class="faq-trigger w-full text-left flex items-center justify-between gap-4 font-bold text-xs sm:text-sm text-ld-navy cursor-pointer">
+              <span>Qual a diferença entre o extintor Pó ABC e o de Água 10L?</span>
+              <i class="fa-solid fa-chevron-down faq-chevron text-ld-red text-xs transition-transform shrink-0"></i>
+            </button>
+            <div class="faq-answer">
+              <div class="overflow-hidden">
+                <p class="pt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  O extintor de <strong>Água 10L</strong> é exclusivo para sólidos (madeira, papel, tecidos) e não deve ser usado em eletricidade. Já o <strong>Pó ABC</strong> atende as 3 classes: sólidos (A), líquidos inflamáveis (B) e equipamentos elétricos (C).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SEÇÃO CTA FINAL (COM RESPIRO E DIVISÓRIA BRANCA ANTES DO RODAPÉ)
+    ========================================================= -->
+    <section class="py-12 sm:py-16 bg-white border-t border-slate-200/70 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-ld-navy via-ld-navyLight to-ld-red text-white text-center px-6 py-10 sm:py-12 shadow-xl">
+        <h2 class="font-display text-xl sm:text-2xl font-extrabold mb-2">
+          Precisa regularizar os extintores da sua empresa?
+        </h2>
+        <p class="text-white/90 text-xs sm:text-sm max-w-xl mx-auto mb-6">
+          Fale agora com a equipe da LD Extintores em Bom Jesus - PI e solicite sua coleta, recarga ou orçamento completo.
+        </p>
+        <button
+          type="button"
+          onclick="openDirectWhatsApp()"
+          class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3.5 px-7 rounded-full shadow-lg shadow-black/25 transition-transform active:scale-95 text-xs sm:text-sm cursor-pointer"
+        >
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Falar no WhatsApp (89) 98121-7813</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER (ANCORADO NA BASE SEM BARRA BRANCA SOBRANDO EMBAIXO)
+  ========================================================= -->
+  <footer class="mt-auto bg-ld-navy text-slate-300 pt-10 pb-8 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+        <div class="flex items-center gap-3.5 text-center md:text-left">
+          <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+            <svg viewBox="0 0 64 64" class="w-7 h-7" aria-hidden="true">
+              <path d="M14 13v38h20v-8.5H23.5V13H14z" fill="#FFFFFF"/>
+              <path d="M29 13h8.5C49 13 56 20.8 56 32s-7 19-18.5 19H29v-8.5h8c6.6 0 10.5-4.3 10.5-10.5S43.6 21.5 37 21.5h-8V13z" fill="#DC2626"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-display text-lg font-extrabold text-white leading-none">
+              LD <span class="text-ld-red">EXTINTORES</span> E EQUIPAMENTOS
+            </p>
+            <p class="text-xs text-slate-400 mt-1">
+              Rua Mal. Deodoro da Fonseca, 475 - São Pedro, Bom Jesus - PI • CNPJ 40.940.673/0001-46
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="sobre.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition">
+            <i class="fa-solid fa-building-shield text-ld-red"></i> A Empresa
+          </a>
+          <a href="trabalhe-conosco.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition">
+            <i class="fa-solid fa-briefcase text-amber-400"></i> Trabalhe Conosco
+          </a>
+          <a
+            href="https://www.instagram.com/ldextintores.bj/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition"
+          >
+            <i class="fa-brands fa-instagram text-ld-red"></i> @ldextintores.bj
+          </a>
+        </div>
+      </div>
+
+      <!-- Barra de Copyright e Autoria -->
+      <div class="mt-7 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400 text-center sm:text-left">
+        <p>© 2026 LD Extintores e Equipamentos Ltda. Todos os direitos reservados.</p>
+        <div class="flex items-center justify-center sm:justify-end gap-2.5">
+          <span>Desenvolvido por <a href="https://github.com/mickael-soares/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-ld-red font-semibold transition">Mickael Soares</a></span>
+          <span class="text-white/20" aria-hidden="true">•</span>
+          <div class="flex items-center gap-2.5">
+            <a href="https://github.com/mickael-soares/" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Mickael Soares" title="GitHub" class="text-slate-400 hover:text-white transition text-xs">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mickael-s-97755098/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Mickael Soares" title="LinkedIn" class="text-slate-400 hover:text-white transition text-xs">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       BOTÃO FLUTUANTE OFICIAL DO WHATSAPP (CANTO INFERIOR DIREITO)
+  ========================================================= -->
+  <a
+    href="https://wa.me/5589981217813?text=Ol%C3%A1%2C%20LD%20Extintores!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar pelo WhatsApp (89) 98121-7813"
+    title="WhatsApp (89) 98121-7813"
+    class="whatsapp-float fixed bottom-5 right-5 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform"
+  >
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8.01 12.27C8.14 12.44 9.76 14.94 12.25 16.01C12.84 16.27 13.3 16.42 13.66 16.54C14.25 16.73 14.79 16.7 15.22 16.64C15.7 16.57 16.69 16.04 16.9 15.45C17.11 14.86 17.11 14.36 17.05 14.25C16.99 14.15 16.82 14.09 16.57 13.96C16.32 13.84 15.1 13.24 14.87 13.16C14.65 13.07 14.48 13.03 14.31 13.28C14.15 13.53 13.67 14.09 13.52 14.25C13.38 14.42 13.23 14.44 12.98 14.31C12.73 14.19 11.93 13.93 10.98 13.08C10.24 12.42 9.74 11.61 9.6 11.36C9.45 11.11 9.58 10.98 9.71 10.85C9.82 10.74 9.96 10.56 10.08 10.41C10.21 10.26 10.25 10.16 10.33 10C10.41 9.83 10.37 9.69 10.31 9.56C10.25 9.44 9.76 8.23 9.55 7.74C9.35 7.25 9.15 7.32 9 7.31C8.86 7.31 8.7 7.33 8.53 7.33Z"/>
+    </svg>
+  </a>
+
+  <!-- Toast de Feedback -->
+  <div id="toast-notification" class="toast-msg fixed top-24 right-4 z-50 pointer-events-none">
+    <div class="bg-ld-navy text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 border border-white/10">
+      <i class="fa-solid fa-circle-check text-emerald-400"></i>
+      <span id="toast-text">Item adicionado!</span>
+    </div>
+  </div>
+
+  <!-- Vue 3 Local Build + Lógica da Aplicação -->
+  <script src="js/vue.global.prod.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

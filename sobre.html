@@ -1,0 +1,487 @@
+<!--
+  =============================================================
+  Projeto: LD Extintores e Equipamentos - Sobre a Empresa
+  Instagram: @ldextintores.bj
+  Empresa: LD EXTINTORES E EQUIPAMENTOS LTDA (CNPJ: 40.940.673/0001-46)
+  Localização: Rua Marechal Deodoro da Fonseca, 475 - São Pedro, Bom Jesus - PI
+  Desenvolvido por: Mickael Soares
+  GitHub / Portfólio: https://github.com/mickael-soares
+  Ano: 2026 • Todos os direitos reservados.
+  =============================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Empresa | LD Extintores e Equipamentos em Bom Jesus - PI</title>
+  <meta name="description" content="Conheça a LD Extintores e Equipamentos Ltda em Bom Jesus - PI (CNPJ 40.940.673/0001-46). Empresa certificada pelo INMETRO, especialista em prevenção e combate a incêndio no sul do Piauí.">
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="BR-PI">
+  <meta name="geo.placename" content="Bom Jesus">
+  <meta name="author" content="Mickael Soares">
+
+  <!-- Favicon SVG Monograma LD -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B192C'/%3E%3Cpath d='M16 14v36h18v-8H25V14h-9z' fill='%23FFFFFF'/%3E%3Cpath d='M30 14h8c11 0 18 7.5 18 18s-7 18-18 18h-8v-8h7.5c6.2 0 10.5-4.2 10.5-10s-4.3-10-10.5-10H30v-8z' fill='%23DC2626'/%3E%3C/svg%3E">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Montserrat + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Montserrat"', 'system-ui', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ld: {
+              navy: '#0B192C',
+              navyLight: '#152C4A',
+              red: '#DC2626',
+              redDark: '#B91C1C',
+              redSoft: '#FEF2F2',
+              amber: '#F59E0B',
+              slate: '#F8FAFC',
+              ink: '#0F172A'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-ld-ink bg-white selection:bg-ld-red selection:text-white min-h-screen flex flex-col">
+
+  <!-- =========================================================
+       HEADER FIXO (NAVEGAÇÃO MULTIPÁGINA CLEAN)
+  ========================================================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <!-- Marca / Monograma Vetorial LD -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-ld-navy flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+          <svg viewBox="0 0 64 64" class="w-8 h-8" aria-hidden="true">
+            <path d="M14 13v38h20v-8.5H23.5V13H14z" fill="#FFFFFF"/>
+            <path d="M29 13h8.5C49 13 56 20.8 56 32s-7 19-18.5 19H29v-8.5h8c6.6 0 10.5-4.3 10.5-10.5S43.6 21.5 37 21.5h-8V13z" fill="#DC2626"/>
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <span class="block font-display text-lg sm:text-xl font-extrabold tracking-tight text-ld-navy leading-none">
+            LD <span class="text-ld-red">EXTINTORES</span>
+          </span>
+          <span class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500 mt-1">
+            Bom Jesus - PI e Região
+          </span>
+        </div>
+      </a>
+
+      <!-- Navegação Desktop Multipágina -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="index.html#catalogo" class="hover:text-ld-red transition">Catálogo &amp; Orçamento</a>
+        <a href="index.html#duvidas" class="hover:text-ld-red transition">Dúvidas</a>
+        <a href="sobre.html" class="text-ld-red font-bold transition">A Empresa</a>
+        <a href="trabalhe-conosco.html" class="hover:text-ld-red transition">Trabalhe Conosco</a>
+      </nav>
+
+      <!-- Ações Header -->
+      <div class="flex items-center gap-2.5">
+        <a
+          href="index.html#catalogo"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-red-50 hover:bg-red-100 text-ld-red font-bold text-xs sm:text-sm border border-red-200 transition"
+        >
+          <i class="fa-solid fa-calculator"></i>
+          <span class="hidden sm:inline">Simular Orçamento</span>
+        </a>
+
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="lg:hidden w-10 h-10 rounded-full bg-slate-100 text-ld-navy flex items-center justify-center"
+          aria-label="Abrir menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 text-sm font-semibold text-slate-700">
+      <a href="index.html#catalogo" class="block py-1 hover:text-ld-red">Catálogo &amp; Orçamento</a>
+      <a href="index.html#duvidas" class="block py-1 hover:text-ld-red">Dúvidas Frequentes</a>
+      <a href="sobre.html" class="block py-1 text-ld-red font-bold">A Empresa (Sobre Nós)</a>
+      <a href="trabalhe-conosco.html" class="block py-1 hover:text-ld-red">Trabalhe Conosco</a>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- =========================================================
+         HERO INSTITUCIONAL
+    ========================================================= -->
+    <section class="bg-hero-industrial text-white py-14 lg:py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center fade-up">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-bold text-white mb-4">
+          <i class="fa-solid fa-building-shield text-ld-red"></i>
+          LD Extintores e Equipamentos Ltda • CNPJ 40.940.673/0001-46
+        </span>
+
+        <h1 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight tracking-tight">
+          Uma nova marca. <span class="text-ld-red">O mesmo compromisso.</span>
+        </h1>
+
+        <p class="mt-3.5 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Sediada no Bairro São Pedro, em <strong class="text-white">Bom Jesus - PI</strong>, somos uma empresa certificada pelo <strong class="text-white">INMETRO</strong> dedicada a proteger vidas, empresas e o agronegócio no sul do Piauí.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         HISTÓRIA & COMPROMISSO TÉCNICO
+    ========================================================= -->
+    <section class="py-14 sm:py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 items-center">
+
+        <div class="lg:col-span-6 space-y-4 fade-up">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-ld-red font-bold text-xs uppercase tracking-wider">
+            <i class="fa-solid fa-fire-extinguisher"></i>
+            Quem Somos
+          </span>
+
+          <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy leading-snug">
+            Excelência em Prevenção e Combate a Incêndio
+          </h2>
+
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            A <strong>LD Extintores e Equipamentos</strong> atende <strong>Bom Jesus - PI e região</strong> com soluções completas de prevenção contra incêndios para comércios, clínicas, escolas, condomínios, frotas e fazendas.
+          </p>
+
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Em nosso novo posicionamento de marca, modernizamos nossa estrutura mantendo o rigor técnico que nos define: <strong>zero tolerância com selos falsificados</strong>, insumos certificados e rastreabilidade total em cada cilindro revisado.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+              <i class="fa-solid fa-certificate text-ld-red text-base mb-1.5"></i>
+              <h3 class="font-display font-bold text-sm text-ld-navy">Credenciada INMETRO</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Manutenção Nível 2 e 3 dentro das normas ABNT NBR.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+              <i class="fa-solid fa-tractor text-ld-red text-base mb-1.5"></i>
+              <h3 class="font-display font-bold text-sm text-ld-navy">Forte no Agronegócio</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Presença na Agrotec Show e atendimento a fazendas e galpões.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 Pontos de Inspeção -->
+        <div class="lg:col-span-6 fade-up">
+          <div class="bg-ld-navy text-white rounded-3xl p-6 sm:p-7 shadow-xl">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-ld-red">Padrão de Qualidade LD</span>
+            <h3 class="font-display font-extrabold text-lg sm:text-xl text-white mt-1 mb-4">
+              O Que Garantimos em Cada Manutenção
+            </h3>
+
+            <div class="space-y-3 text-xs sm:text-sm">
+              <div class="flex items-start gap-3 p-3 rounded-2xl bg-white/5 border border-white/10">
+                <span class="w-6 h-6 rounded-full bg-ld-red text-white font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                <div>
+                  <strong class="text-white block text-xs sm:text-sm">Selo INMETRO Autêntico</strong>
+                  <span class="text-slate-300 text-xs">Numeração de série oficial e holograma verificável.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-2xl bg-white/5 border border-white/10">
+                <span class="w-6 h-6 rounded-full bg-ld-red text-white font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                <div>
+                  <strong class="text-white block text-xs sm:text-sm">Anel do Ano &amp; Lacre Inviolável</strong>
+                  <span class="text-slate-300 text-xs">Instalado com a desmontagem completa na cor oficial do ano.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-2xl bg-white/5 border border-white/10">
+                <span class="w-6 h-6 rounded-full bg-ld-red text-white font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                <div>
+                  <strong class="text-white block text-xs sm:text-sm">Pressurização e Manômetro Calibrado</strong>
+                  <span class="text-slate-300 text-xs">Testes de estanqueidade para resposta imediata na emergência.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 p-3 rounded-2xl bg-white/5 border border-white/10">
+                <span class="w-6 h-6 rounded-full bg-ld-red text-white font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span>
+                <div>
+                  <strong class="text-white block text-xs sm:text-sm">Sinalização NBR 13434 e Luminárias</strong>
+                  <span class="text-slate-300 text-xs">Orientação sobre placas fotoluminescentes e iluminação LED.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================
+         GUIA TÉCNICO: CLASSES DE INCÊNDIO (A, B e C)
+    ========================================================= -->
+    <section class="py-14 sm:py-16 bg-slate-50 border-y border-slate-200/70">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-9 fade-up">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-ld-red">Educação Preventiva</span>
+          <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy mt-1">
+            Guia Rápido: Classes de Incêndio
+          </h2>
+          <p class="text-slate-500 text-xs sm:text-sm mt-1">
+            Conheça a aplicação correta de cada agente extintor comercializado pela LD Extintores.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 fade-up">
+          <div class="bg-white rounded-3xl border border-slate-200/80 p-5 shadow-2xs">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-10 h-10 rounded-xl bg-ld-navy text-white font-display font-extrabold text-base flex items-center justify-center shrink-0">A</span>
+              <div>
+                <h3 class="font-display font-bold text-sm sm:text-base text-ld-navy">Classe A • Sólidos</h3>
+                <span class="text-xs text-slate-500">Madeira, papel, tecido, algodão</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Materiais sólidos que queimam em superfície e profundidade deixando resíduos.
+            </p>
+            <p class="mt-3.5 pt-3 border-t border-slate-100 text-xs font-bold text-ld-red">
+              <i class="fa-solid fa-check-circle mr-1"></i> Indicado: Água 10L ou Pó ABC
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl border border-slate-200/80 p-5 shadow-2xs">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-10 h-10 rounded-xl bg-ld-red text-white font-display font-extrabold text-base flex items-center justify-center shrink-0">B</span>
+              <div>
+                <h3 class="font-display font-bold text-sm sm:text-base text-ld-navy">Classe B • Líquidos</h3>
+                <span class="text-xs text-slate-500">Gasolina, diesel, álcool, óleos</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Líquidos e gases inflamáveis que queimam na superfície e exigem abafamento.
+            </p>
+            <p class="mt-3.5 pt-3 border-t border-slate-100 text-xs font-bold text-ld-red">
+              <i class="fa-solid fa-check-circle mr-1"></i> Indicado: Pó ABC, Pó BC ou CO₂
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl border border-slate-200/80 p-5 shadow-2xs">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="w-10 h-10 rounded-xl bg-amber-500 text-ld-navy font-display font-extrabold text-base flex items-center justify-center shrink-0">C</span>
+              <div>
+                <h3 class="font-display font-bold text-sm sm:text-base text-ld-navy">Classe C • Elétricos</h3>
+                <span class="text-xs text-slate-500">Quadros elétricos, servidores, motores</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Equipamentos energizados onde jamais se deve utilizar água condutora.
+            </p>
+            <p class="mt-3.5 pt-3 border-t border-slate-100 text-xs font-bold text-ld-red">
+              <i class="fa-solid fa-check-circle mr-1"></i> Indicado: CO₂ (limpo) ou Pó ABC / BC
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         LOCALIZAÇÃO & CONTATOS DA SEDE (BOM JESUS - PI)
+    ========================================================= -->
+    <section class="py-14 sm:py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 fade-up">
+        <div class="bg-slate-50 rounded-3xl border border-slate-200/90 p-6 sm:p-7">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200/80">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-ld-red">Sede Própria</span>
+              <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy">Onde Estamos em Bom Jesus - PI</h2>
+            </div>
+            <span class="self-start sm:self-auto px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold whitespace-nowrap">
+              Segunda a Sábado
+            </span>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-3.5 my-5 text-xs sm:text-sm">
+            <div class="bg-white p-4 rounded-2xl border border-slate-200/70 flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-red-50 text-ld-red flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <strong class="text-ld-navy block text-xs sm:text-sm">Endereço</strong>
+                <span class="text-slate-600 text-xs">Rua Marechal Deodoro da Fonseca, 475 — Bairro São Pedro, Bom Jesus - PI</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-200/70 flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+              </div>
+              <div>
+                <strong class="text-ld-navy block text-xs sm:text-sm">WhatsApp &amp; Telefone</strong>
+                <a href="https://wa.me/5589981217813" target="_blank" rel="noopener noreferrer" class="text-emerald-700 font-bold text-xs sm:text-sm hover:underline">
+                  (89) 98121-7813
+                </a>
+                <span class="block text-xs text-slate-400">Coleta e entrega em Bom Jesus e região</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-200/70 flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-red-50 text-ld-red flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="min-w-0">
+                <strong class="text-ld-navy block text-xs sm:text-sm">E-mail Corporativo</strong>
+                <a href="mailto:ldextintoreseequipamentos@gmail.com" class="text-slate-600 hover:text-ld-red text-xs break-all">
+                  ldextintoreseequipamentos@gmail.com
+                </a>
+              </div>
+            </div>
+
+            <div class="bg-white p-4 rounded-2xl border border-slate-200/70 flex items-start gap-3">
+              <div class="w-9 h-9 rounded-xl bg-red-50 text-ld-red flex items-center justify-center shrink-0">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div>
+                <strong class="text-ld-navy block text-xs sm:text-sm">Instagram Oficial</strong>
+                <a href="https://www.instagram.com/ldextintores.bj/" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-ld-red font-semibold text-xs sm:text-sm">
+                  @ldextintores.bj
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Rua+Marechal+Deodoro+da+Fonseca+475+Sao+Pedro+Bom+Jesus+PI"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex-1 py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-ld-navy font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition whitespace-nowrap"
+            >
+              <i class="fa-solid fa-map-location-dot text-ld-red"></i>
+              <span>Ver no Google Maps</span>
+            </a>
+            <a
+              href="index.html#catalogo"
+              class="flex-1 py-2.5 px-4 rounded-xl bg-ld-red hover:bg-ld-redDark text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition whitespace-nowrap"
+            >
+              <i class="fa-solid fa-calculator"></i>
+              <span>Simular Orçamento</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         SEÇÃO CTA FINAL (COM RESPIRO E DIVISÓRIA BRANCA ANTES DO RODAPÉ)
+    ========================================================= -->
+    <section class="py-12 sm:py-16 bg-white border-t border-slate-200/70 px-4 sm:px-6">
+      <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-ld-navy via-ld-navyLight to-ld-red text-white text-center px-6 py-10 sm:py-12 shadow-xl">
+        <h2 class="font-display text-xl sm:text-2xl font-extrabold mb-2">
+          Precisa regularizar os extintores da sua empresa?
+        </h2>
+        <p class="text-white/90 text-xs sm:text-sm max-w-xl mx-auto mb-6">
+          Fale agora com a equipe da LD Extintores em Bom Jesus - PI e solicite sua coleta, recarga ou orçamento completo.
+        </p>
+        <button
+          type="button"
+          onclick="openDirectWhatsApp()"
+          class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3.5 px-7 rounded-full shadow-lg shadow-black/25 transition-transform active:scale-95 text-xs sm:text-sm cursor-pointer"
+        >
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Falar no WhatsApp (89) 98121-7813</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       FOOTER (ANCORADO NA BASE)
+  ========================================================= -->
+  <footer class="mt-auto bg-ld-navy text-slate-300 pt-10 pb-8 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+        <div class="flex items-center gap-3.5 text-center md:text-left">
+          <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+            <svg viewBox="0 0 64 64" class="w-7 h-7" aria-hidden="true">
+              <path d="M14 13v38h20v-8.5H23.5V13H14z" fill="#FFFFFF"/>
+              <path d="M29 13h8.5C49 13 56 20.8 56 32s-7 19-18.5 19H29v-8.5h8c6.6 0 10.5-4.3 10.5-10.5S43.6 21.5 37 21.5h-8V13z" fill="#DC2626"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-display text-lg font-extrabold text-white leading-none">
+              LD <span class="text-ld-red">EXTINTORES</span> E EQUIPAMENTOS
+            </p>
+            <p class="text-xs text-slate-400 mt-1">
+              Rua Mal. Deodoro da Fonseca, 475 - São Pedro, Bom Jesus - PI • CNPJ 40.940.673/0001-46
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="index.html#catalogo" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition">
+            <i class="fa-solid fa-fire-extinguisher text-ld-red"></i> Catálogo
+          </a>
+          <a href="trabalhe-conosco.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition">
+            <i class="fa-solid fa-briefcase text-amber-400"></i> Trabalhe Conosco
+          </a>
+          <a
+            href="https://www.instagram.com/ldextintores.bj/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition"
+          >
+            <i class="fa-brands fa-instagram text-ld-red"></i> @ldextintores.bj
+          </a>
+        </div>
+      </div>
+
+      <!-- Barra de Copyright e Autoria -->
+      <div class="mt-7 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400 text-center sm:text-left">
+        <p>© 2026 LD Extintores e Equipamentos Ltda. Todos os direitos reservados.</p>
+        <div class="flex items-center justify-center sm:justify-end gap-2.5">
+          <span>Desenvolvido por <a href="https://github.com/mickael-soares/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-ld-red font-semibold transition">Mickael Soares</a></span>
+          <span class="text-white/20" aria-hidden="true">•</span>
+          <div class="flex items-center gap-2.5">
+            <a href="https://github.com/mickael-soares/" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Mickael Soares" title="GitHub" class="text-slate-400 hover:text-white transition text-xs">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mickael-s-97755098/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Mickael Soares" title="LinkedIn" class="text-slate-400 hover:text-white transition text-xs">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão Flutuante Oficial do WhatsApp -->
+  <a
+    href="https://wa.me/5589981217813?text=Ol%C3%A1%2C%20LD%20Extintores!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar pelo WhatsApp (89) 98121-7813"
+    title="WhatsApp (89) 98121-7813"
+    class="whatsapp-float fixed bottom-5 right-5 z-40 w-14 h-14 bg-[#25D366] hover:bg-[#20bd5a] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform"
+  >
+    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67ZM8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8.01 12.27C8.14 12.44 9.76 14.94 12.25 16.01C12.84 16.27 13.3 16.42 13.66 16.54C14.25 16.73 14.79 16.7 15.22 16.64C15.7 16.57 16.69 16.04 16.9 15.45C17.11 14.86 17.11 14.36 17.05 14.25C16.99 14.15 16.82 14.09 16.57 13.96C16.32 13.84 15.1 13.24 14.87 13.16C14.65 13.07 14.48 13.03 14.31 13.28C14.15 13.53 13.67 14.09 13.52 14.25C13.38 14.42 13.23 14.44 12.98 14.31C12.73 14.19 11.93 13.93 10.98 13.08C10.24 12.42 9.74 11.61 9.6 11.36C9.45 11.11 9.58 10.98 9.71 10.85C9.82 10.74 9.96 10.56 10.08 10.41C10.21 10.26 10.25 10.16 10.33 10C10.41 9.83 10.37 9.69 10.31 9.56C10.25 9.44 9.76 8.23 9.55 7.74C9.35 7.25 9.15 7.32 9 7.31C8.86 7.31 8.7 7.33 8.53 7.33Z"/>
+    </svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

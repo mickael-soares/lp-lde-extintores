@@ -1,0 +1,415 @@
+<!--
+  =============================================================
+  Projeto: LD Extintores e Equipamentos - Trabalhe Conosco
+  Instagram: @ldextintores.bj
+  Empresa: LD EXTINTORES E EQUIPAMENTOS LTDA (CNPJ: 40.940.673/0001-46)
+  Localização: Rua Marechal Deodoro da Fonseca, 475 - São Pedro, Bom Jesus - PI
+  Desenvolvido por: Mickael Soares
+  GitHub / Portfólio: https://github.com/mickael-soares
+  Ano: 2026 • Todos os direitos reservados.
+  =============================================================
+-->
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabalhe Conosco | LD Extintores e Equipamentos em Bom Jesus - PI</title>
+  <meta name="description" content="Faça parte da equipe LD Extintores e Equipamentos em Bom Jesus - PI. Envie seu currículo para vagas técnicas, comerciais, administrativas e operacionais.">
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="BR-PI">
+  <meta name="geo.placename" content="Bom Jesus">
+  <meta name="author" content="Mickael Soares">
+
+  <!-- Favicon SVG Monograma LD -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B192C'/%3E%3Cpath d='M16 14v36h18v-8H25V14h-9z' fill='%23FFFFFF'/%3E%3Cpath d='M30 14h8c11 0 18 7.5 18 18s-7 18-18 18h-8v-8h7.5c6.2 0 10.5-4.2 10.5-10s-4.3-10-10.5-10H30v-8z' fill='%23DC2626'/%3E%3C/svg%3E">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Montserrat + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Montserrat"', 'system-ui', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            ld: {
+              navy: '#0B192C',
+              navyLight: '#152C4A',
+              red: '#DC2626',
+              redDark: '#B91C1C',
+              redSoft: '#FEF2F2',
+              amber: '#F59E0B',
+              slate: '#F8FAFC',
+              ink: '#0F172A'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans text-ld-ink bg-white selection:bg-ld-red selection:text-white min-h-screen flex flex-col">
+
+  <!-- =========================================================
+       HEADER FIXO (NAVEGAÇÃO MULTIPÁGINA CLEAN)
+  ========================================================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4">
+      <!-- Marca / Monograma Vetorial LD -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-ld-navy flex items-center justify-center shadow-sm group-hover:scale-105 transition">
+          <svg viewBox="0 0 64 64" class="w-8 h-8" aria-hidden="true">
+            <path d="M14 13v38h20v-8.5H23.5V13H14z" fill="#FFFFFF"/>
+            <path d="M29 13h8.5C49 13 56 20.8 56 32s-7 19-18.5 19H29v-8.5h8c6.6 0 10.5-4.3 10.5-10.5S43.6 21.5 37 21.5h-8V13z" fill="#DC2626"/>
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <span class="block font-display text-lg sm:text-xl font-extrabold tracking-tight text-ld-navy leading-none">
+            LD <span class="text-ld-red">EXTINTORES</span>
+          </span>
+          <span class="block text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500 mt-1">
+            Bom Jesus - PI e Região
+          </span>
+        </div>
+      </a>
+
+      <!-- Navegação Desktop Multipágina -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="index.html#catalogo" class="hover:text-ld-red transition">Catálogo &amp; Orçamento</a>
+        <a href="index.html#duvidas" class="hover:text-ld-red transition">Dúvidas</a>
+        <a href="sobre.html" class="hover:text-ld-red transition">A Empresa</a>
+        <a href="trabalhe-conosco.html" class="text-ld-red font-bold transition">Trabalhe Conosco</a>
+      </nav>
+
+      <!-- Ações Header -->
+      <div class="flex items-center gap-2.5">
+        <a
+          href="index.html#catalogo"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-red-50 hover:bg-red-100 text-ld-red font-bold text-xs sm:text-sm border border-red-200 transition"
+        >
+          <i class="fa-solid fa-calculator"></i>
+          <span class="hidden sm:inline">Simular Orçamento</span>
+        </a>
+
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="lg:hidden w-10 h-10 rounded-full bg-slate-100 text-ld-navy flex items-center justify-center"
+          aria-label="Abrir menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-3 text-sm font-semibold text-slate-700">
+      <a href="index.html#catalogo" class="block py-1 hover:text-ld-red">Catálogo &amp; Orçamento</a>
+      <a href="index.html#duvidas" class="block py-1 hover:text-ld-red">Dúvidas Frequentes</a>
+      <a href="sobre.html" class="block py-1 hover:text-ld-red">A Empresa (Sobre Nós)</a>
+      <a href="trabalhe-conosco.html" class="block py-1 text-ld-red font-bold">Trabalhe Conosco</a>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- =========================================================
+         HERO CARREIRAS
+    ========================================================= -->
+    <section class="bg-hero-industrial text-white py-14 lg:py-16">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center fade-up">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-bold text-amber-300 mb-4">
+          <i class="fa-solid fa-briefcase text-ld-red"></i>
+          Carreiras &amp; Oportunidades • Bom Jesus - PI
+        </span>
+
+        <h1 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight tracking-tight">
+          Faça parte da equipe <span class="text-ld-red">LD Extintores</span>
+        </h1>
+
+        <p class="mt-3.5 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          Buscamos profissionais comprometidos, proativos e que valorizam a segurança para crescer conosco em <strong class="text-white">Bom Jesus - PI e região</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         ÁREAS DE ATUAÇÃO & FORMULÁRIO DE CANDIDATURA (VUE 3 LOCAL)
+    ========================================================= -->
+    <div id="ld-jobs-app" v-cloak>
+      <section class="py-14 sm:py-16 bg-slate-50 border-b border-slate-200/70">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+          <div class="text-center max-w-2xl mx-auto mb-9 fade-up">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-ld-red">Nossas Áreas</span>
+            <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy mt-1">
+              Onde Você Pode Atuar
+            </h2>
+            <p class="text-slate-500 text-xs sm:text-sm mt-1">
+              Selecione uma área abaixo para preencher sua candidatura rapidamente.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 fade-up">
+            <article
+              v-for="job in jobs"
+              :key="job.roleValue"
+              :class="form.role === job.roleValue ? 'border-ld-red ring-1 ring-ld-red/20' : 'border-slate-200/80'"
+              class="bg-white rounded-3xl border p-5 flex flex-col justify-between shadow-2xs transition"
+            >
+              <div>
+                <span class="w-10 h-10 rounded-xl bg-red-50 text-ld-red flex items-center justify-center mb-3">
+                  <i :class="['fa-solid', job.icon]"></i>
+                </span>
+                <h3 class="font-display font-bold text-sm sm:text-base text-ld-navy whitespace-nowrap">
+                  {{ job.title }}
+                </h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                  {{ job.desc }}
+                </p>
+              </div>
+              <button
+                type="button"
+                @click="selectRole(job.roleValue)"
+                :class="form.role === job.roleValue ? 'bg-ld-red text-white' : 'bg-slate-100 hover:bg-ld-red hover:text-white text-ld-navy'"
+                class="mt-5 w-full py-2.5 px-3 rounded-xl font-bold text-xs transition cursor-pointer whitespace-nowrap"
+              >
+                {{ form.role === job.roleValue ? 'Área Selecionada ✓' : 'Selecionar esta área' }}
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           FORMULÁRIO DE CANDIDATURA (REATIVO VUE 3: WHATSAPP + E-MAIL)
+      ========================================================= -->
+      <section id="form-candidatura" class="py-14 sm:py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 fade-up">
+          <div class="bg-slate-50 rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-sm">
+            <div class="mb-6">
+              <span class="text-xs font-extrabold uppercase tracking-wider text-ld-red">Envie Seu Currículo</span>
+              <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy mt-1">
+                Ficha Rápida de Candidatura
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-500 mt-1">
+                Preencha seus dados abaixo e envie pelo <strong>WhatsApp</strong> ou <strong>E-mail oficial</strong> da LD Extintores.
+              </p>
+            </div>
+
+            <form @submit.prevent class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="job-name" class="block text-xs font-bold text-ld-navy mb-1.5">Nome Completo *</label>
+                  <input
+                    id="job-name"
+                    v-model="form.name"
+                    type="text"
+                    required
+                    placeholder="Ex: Maria Oliveira"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-ld-red"
+                  />
+                </div>
+
+                <div>
+                  <label for="job-phone" class="block text-xs font-bold text-ld-navy mb-1.5">Seu WhatsApp / Telefone *</label>
+                  <input
+                    id="job-phone"
+                    v-model="form.phone"
+                    type="tel"
+                    required
+                    placeholder="Ex: (89) 99999-9999"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-ld-red"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="job-city" class="block text-xs font-bold text-ld-navy mb-1.5">Cidade / Bairro</label>
+                  <input
+                    id="job-city"
+                    v-model="form.city"
+                    type="text"
+                    placeholder="Ex: São Pedro, Bom Jesus - PI"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-ld-red"
+                  />
+                </div>
+
+                <div>
+                  <label for="job-role" class="block text-xs font-bold text-ld-navy mb-1.5">Área de Interesse</label>
+                  <select
+                    id="job-role"
+                    v-model="form.role"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-ld-red"
+                  >
+                    <option value="Técnico(a) em Manutenção e Recarga">Técnico(a) em Manutenção e Recarga</option>
+                    <option value="Consultor(a) Comercial / Vendas">Consultor(a) Comercial / Vendas</option>
+                    <option value="Auxiliar Administrativo / Atendimento">Auxiliar Administrativo / Atendimento</option>
+                    <option value="Logística / Coleta e Entrega">Logística / Coleta e Entrega</option>
+                    <option value="Banco de Talentos (Geral)">Banco de Talentos (Geral)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="job-cnh" class="block text-xs font-bold text-ld-navy mb-1.5">Possui CNH?</label>
+                  <select
+                    id="job-cnh"
+                    v-model="form.cnh"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-ld-red"
+                  >
+                    <option value="Sim - Categoria A/B">Sim - Categoria A/B</option>
+                    <option value="Sim - Categoria B">Sim - Categoria B</option>
+                    <option value="Sim - Categoria A">Sim - Categoria A</option>
+                    <option value="Sim - Categoria C/D/E">Sim - Categoria C/D/E</option>
+                    <option value="Não possuo CNH">Não possuo CNH</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="job-availability" class="block text-xs font-bold text-ld-navy mb-1.5">Disponibilidade de Horário</label>
+                  <select
+                    id="job-availability"
+                    v-model="form.availability"
+                    class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-ld-red"
+                  >
+                    <option value="Integral (Segunda a Sábado)">Integral (Segunda a Sábado)</option>
+                    <option value="Início Imediato">Início Imediato</option>
+                    <option value="A combinar">A combinar</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="job-summary" class="block text-xs font-bold text-ld-navy mb-1.5">Resumo da Sua Experiência</label>
+                <textarea
+                  id="job-summary"
+                  v-model="form.summary"
+                  rows="3"
+                  placeholder="Conte brevemente suas experiências anteriores, cursos ou habilidades..."
+                  class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-ld-red resize-none"
+                ></textarea>
+              </div>
+
+              <!-- Aviso útil sobre o PDF -->
+              <div class="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/80 text-xs text-slate-700 flex items-start gap-2.5">
+                <i class="fa-solid fa-paperclip text-amber-600 mt-0.5"></i>
+                <span>
+                  <strong>Dica:</strong> Ao clicar abaixo, sua ficha já vai preenchida. Basta <strong>anexar o PDF do seu currículo</strong> na conversa do WhatsApp ou no e-mail.
+                </span>
+              </div>
+
+              <!-- Dupla opção de envio (1 linha garantida) -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <button
+                  type="button"
+                  @click="sendViaWhatsApp"
+                  class="py-3.5 px-4 rounded-2xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
+                >
+                  <i class="fa-brands fa-whatsapp text-base"></i>
+                  <span>Enviar pelo WhatsApp</span>
+                </button>
+
+                <button
+                  type="button"
+                  @click="sendViaEmail"
+                  class="py-3.5 px-4 rounded-2xl bg-ld-navy hover:bg-ld-navyLight text-white font-bold text-xs sm:text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
+                >
+                  <i class="fa-solid fa-envelope text-sm"></i>
+                  <span>Enviar por E-mail (RH)</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- =========================================================
+       FOOTER (ANCORADO NA BASE)
+  ========================================================= -->
+  <footer class="mt-auto bg-ld-navy text-slate-300 pt-10 pb-8 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+        <div class="flex items-center gap-3.5 text-center md:text-left">
+          <div class="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+            <svg viewBox="0 0 64 64" class="w-7 h-7" aria-hidden="true">
+              <path d="M14 13v38h20v-8.5H23.5V13H14z" fill="#FFFFFF"/>
+              <path d="M29 13h8.5C49 13 56 20.8 56 32s-7 19-18.5 19H29v-8.5h8c6.6 0 10.5-4.3 10.5-10.5S43.6 21.5 37 21.5h-8V13z" fill="#DC2626"/>
+            </svg>
+          </div>
+          <div>
+            <p class="font-display text-lg font-extrabold text-white leading-none">
+              LD <span class="text-ld-red">EXTINTORES</span> E EQUIPAMENTOS
+            </p>
+            <p class="text-xs text-slate-400 mt-1">
+              Rua Mal. Deodoro da Fonseca, 475 - São Pedro, Bom Jesus - PI • CNPJ 40.940.673/0001-46
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <a href="index.html#catalogo" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition">
+            <i class="fa-solid fa-fire-extinguisher text-ld-red"></i> Catálogo
+          </a>
+          <a href="sobre.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition">
+            <i class="fa-solid fa-building-shield text-amber-400"></i> A Empresa
+          </a>
+          <a
+            href="https://www.instagram.com/ldextintores.bj/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-semibold transition"
+          >
+            <i class="fa-brands fa-instagram text-ld-red"></i> @ldextintores.bj
+          </a>
+        </div>
+      </div>
+
+      <!-- Barra de Copyright e Autoria -->
+      <div class="mt-7 pt-5 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400 text-center sm:text-left">
+        <p>© 2026 LD Extintores e Equipamentos Ltda. Todos os direitos reservados.</p>
+        <div class="flex items-center justify-center sm:justify-end gap-2.5">
+          <span>Desenvolvido por <a href="https://github.com/mickael-soares/" target="_blank" rel="noopener noreferrer" class="text-white hover:text-ld-red font-semibold transition">Mickael Soares</a></span>
+          <span class="text-white/20" aria-hidden="true">•</span>
+          <div class="flex items-center gap-2.5">
+            <a href="https://github.com/mickael-soares/" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Mickael Soares" title="GitHub" class="text-slate-400 hover:text-white transition text-xs">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mickael-s-97755098/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Mickael Soares" title="LinkedIn" class="text-slate-400 hover:text-white transition text-xs">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast de Feedback -->
+  <div id="toast-notification" class="toast-msg fixed top-24 right-4 z-50 pointer-events-none">
+    <div class="bg-ld-navy text-white text-xs font-semibold px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 border border-white/10">
+      <i class="fa-solid fa-circle-check text-emerald-400"></i>
+      <span id="toast-text">Vaga selecionada!</span>
+    </div>
+  </div>
+
+  <!-- Vue 3 Local Build + Lógica da Aplicação -->
+  <script src="js/vue.global.prod.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

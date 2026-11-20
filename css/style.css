@@ -1,0 +1,240 @@
+/**
+ * LD Extintores e Equipamentos - Estilos Customizados & Animações
+ * Bom Jesus - PI e Região • @ldextintores.bj
+ * Desenvolvido por: Mickael Soares
+ */
+
+:root {
+  --ld-navy: #0B192C;
+  --ld-navy-light: #152C4A;
+  --ld-red: #DC2626;
+  --ld-red-dark: #B91C1C;
+  --ld-red-soft: #FEF2F2;
+  --ld-amber: #F59E0B;
+  --ld-slate: #F8FAFC;
+  --ld-ink: #0F172A;
+}
+
+body {
+  background-color: var(--ld-slate);
+  color: var(--ld-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ocultar templates Vue antes de montar */
+[v-cloak] {
+  display: none !important;
+}
+
+/* Barra de rolagem customizada */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ld-red);
+}
+
+/* Padrão técnico industrial no Hero */
+.bg-hero-industrial {
+  background-color: #0B192C;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(220, 38, 38, 0.22) 0%, transparent 42%),
+    radial-gradient(circle at 88% 78%, rgba(220, 38, 38, 0.14) 0%, transparent 45%),
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 26px 26px;
+}
+
+/* Textura sutil de grade técnica em seções claras */
+.bg-grid-light {
+  background-color: #F8FAFC;
+  background-image: radial-gradient(#0B192C10 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Flutuação suave */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+/* Pulso oficial do botão flutuante WhatsApp */
+@keyframes pulseWhatsapp {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-float {
+  animation: pulseWhatsapp 2.4s infinite;
+}
+
+/* Ocultar scrollbar mantendo rolagem tátil nas abas */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animação de entrada suave */
+.fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Aba ativa do catálogo */
+.catalog-tab {
+  transition: all 0.2s ease;
+}
+
+.catalog-tab.active {
+  background-color: var(--ld-red);
+  color: #ffffff;
+  border-color: var(--ld-red);
+  box-shadow: 0 8px 20px -6px rgba(220, 38, 38, 0.45);
+}
+
+/* Animação ao trocar de aba */
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.catalog-panel-enter {
+  animation: panelFadeIn 0.25s ease-out forwards;
+}
+
+/* Card selecionado no simulador */
+.product-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+}
+
+.product-card.in-cart {
+  border-color: var(--ld-red) !important;
+  box-shadow: 0 12px 26px -10px rgba(220, 38, 38, 0.22);
+}
+
+/* Drawer lateral do orçamento */
+.drawer-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.drawer-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.drawer-panel {
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-panel.open {
+  transform: translateX(0);
+}
+
+/* Barra flutuante inferior do carrinho */
+.sticky-budget-bar {
+  transform: translateY(130%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+.sticky-budget-bar.visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Remover setas padrão do input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Toast de feedback */
+.toast-msg {
+  transform: translateY(14px);
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.toast-msg.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Accordion FAQ */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-gentle,
+  .fade-up,
+  .catalog-panel-enter,
+  .whatsapp-float {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
