@@ -316,20 +316,20 @@
         </div>
       </section>
 
-      <!-- CATÁLOGO INDUSTRIAL DARK COM FOTOS DE PRODUTOS -->
-      <section id="catalogo" class="py-16 bg-catalog-industrial text-white">
+      <!-- CATÁLOGO CLARO DE ALTA LEITURA COM FOTOS DE PRODUTOS -->
+      <section id="catalogo" class="py-16 bg-catalog-light text-ld-ink">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
           <!-- Cabeçalho da Seção -->
           <div class="text-center max-w-2xl mx-auto mb-8 fade-up">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-ld-red/20 border border-ld-red/40 text-white font-bold text-xs uppercase tracking-wider">
-              <i class="fa-solid fa-fire-flame-curved text-ld-red"></i>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 border border-red-200 text-ld-red font-bold text-xs uppercase tracking-wider">
+              <i class="fa-solid fa-fire-flame-curved"></i>
               Catálogo de Equipamentos &amp; Serviços
             </span>
-            <h2 class="font-display font-extrabold text-xl sm:text-2xl text-white mt-2 uppercase tracking-tight">
+            <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy mt-2">
               Simule seu Orçamento Online
             </h2>
-            <p class="text-slate-300 text-xs sm:text-sm mt-1">
+            <p class="text-slate-600 text-xs sm:text-sm mt-1">
               Selecione a categoria abaixo, adicione os equipamentos com 1 clique e envie direto para o nosso WhatsApp.
             </p>
           </div>
@@ -341,8 +341,8 @@
               :key="cat.id"
               type="button"
               @click="selectCategory(cat.id)"
-              :class="activeCategory === cat.id ? 'active' : 'bg-white/5 text-slate-200 border-white/15 hover:border-ld-red/60 hover:bg-white/10'"
-              class="catalog-tab shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs sm:text-sm font-bold cursor-pointer select-none"
+              :class="activeCategory === cat.id ? 'active' : 'bg-white text-ld-navy border-slate-200 hover:border-ld-red/50 hover:bg-red-50/40'"
+              class="catalog-tab shrink-0 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs sm:text-sm font-bold cursor-pointer select-none shadow-2xs"
             >
               <i :class="['fa-solid', cat.icon, 'text-xs', activeCategory === cat.id ? 'text-white' : 'text-ld-red']"></i>
               <span>{{ cat.label }}</span>
@@ -356,9 +356,9 @@
             </button>
           </div>
 
-          <!-- Painel de Cards Industriais com Fotos -->
+          <!-- Painel de Cards Claros com Fotos -->
           <div :key="activeCategory" class="catalog-panel-enter">
-            <p class="text-center text-xs sm:text-sm text-slate-300 mb-6">
+            <p class="text-center text-xs sm:text-sm text-slate-500 mb-6">
               {{ currentCategory.subtitle }}
             </p>
 
@@ -367,13 +367,13 @@
                 v-for="item in currentCategory.items"
                 :key="item.id"
                 :class="{ 'in-cart': cart[item.id] > 0 }"
-                class="industrial-card rounded-2xl overflow-hidden flex flex-col justify-between"
+                class="catalog-card-light rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm"
               >
                 <div>
                   <!-- Imagem do Equipamento com Zoom Lightbox -->
                   <div
                     @click="openLightbox(item)"
-                    class="relative h-52 bg-ld-navyDark overflow-hidden group cursor-zoom-in border-b border-white/10"
+                    class="relative h-52 bg-ld-navyDark overflow-hidden group cursor-zoom-in border-b border-slate-100"
                   >
                     <img
                       :src="item.image"
@@ -381,11 +381,11 @@
                       loading="lazy"
                       class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-300"
                     />
-                    <div class="absolute inset-0 bg-gradient-to-t from-ld-navyDark via-transparent to-black/30"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/25"></div>
 
                     <!-- Badge Topo Esquerdo -->
                     <span
-                      :class="item.featured ? 'bg-ld-red text-white' : 'bg-ld-navyDark/90 text-slate-200 border border-white/15'"
+                      :class="item.featured ? 'bg-ld-red text-white' : 'bg-ld-navyDark/90 text-white border border-white/15'"
                       class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider shadow"
                     >
                       {{ item.badge }}
@@ -408,33 +408,33 @@
                     </span>
 
                     <!-- Botão Ampliar -->
-                    <span class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] font-semibold px-2.5 py-1 rounded-md opacity-80 group-hover:opacity-100 transition">
+                    <span class="absolute bottom-3 right-3 bg-black/65 text-white text-[10px] font-semibold px-2.5 py-1 rounded-md opacity-85 group-hover:opacity-100 transition">
                       <i class="fa-solid fa-magnifying-glass-plus mr-1"></i>Ampliar
                     </span>
                   </div>
 
-                  <!-- Corpo do Card -->
+                  <!-- Corpo do Card Claro -->
                   <div class="p-5">
-                    <h3 class="font-display font-bold text-sm sm:text-base text-white leading-snug">
+                    <h3 class="font-display font-bold text-sm sm:text-base text-ld-navy leading-snug">
                       {{ item.name }}
                     </h3>
-                    <p class="text-xs text-slate-400 mt-0.5">{{ item.subtitle }}</p>
+                    <p class="text-xs text-slate-500 mt-0.5">{{ item.subtitle }}</p>
 
-                    <div class="mt-3.5 pt-3 border-t border-white/10 flex items-baseline justify-between">
+                    <div class="mt-3.5 pt-3 border-t border-slate-100 flex items-baseline justify-between">
                       <div class="flex items-baseline gap-1.5">
-                        <span class="text-2xl font-extrabold text-white">
+                        <span class="text-2xl font-extrabold text-ld-navy">
                           {{ item.priceLabel ? item.priceLabel : formatBRL(item.price) }}
                         </span>
                         <span v-if="item.price > 0" class="text-xs font-semibold text-slate-400">
                           / {{ item.unit }}
                         </span>
                       </div>
-                      <span class="text-[11px] font-bold text-emerald-400">
-                        <i class="fa-solid fa-shield-check mr-1"></i>Garantia LD
+                      <span class="text-[11px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md">
+                        <i class="fa-solid fa-certificate mr-1"></i>INMETRO
                       </span>
                     </div>
 
-                    <ul class="mt-3.5 space-y-1.5 text-xs text-slate-300">
+                    <ul class="mt-3.5 space-y-1.5 text-xs text-slate-600">
                       <li v-for="(feat, idx) in item.features" :key="idx" class="flex items-start gap-2">
                         <i class="fa-solid fa-check text-ld-red mt-0.5 shrink-0 text-[11px]"></i>
                         <span>{{ feat }}</span>
@@ -449,18 +449,18 @@
                     v-if="!cart[item.id]"
                     type="button"
                     @click="addItem(item)"
-                    class="btn-glow-red w-full py-3 px-4 rounded-xl text-white font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer"
+                    class="btn-glow-red w-full py-2.5 px-4 rounded-xl text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <i class="fa-solid fa-plus text-xs"></i>
                     <span>Adicionar ({{ item.defaultQty || 1 }} {{ item.unit }})</span>
                   </button>
 
-                  <div v-else class="flex items-center justify-between gap-2 bg-white/10 border border-ld-red/60 rounded-xl p-1.5">
-                    <div class="flex items-center bg-ld-navyDark rounded-lg p-0.5 border border-white/10">
+                  <div v-else class="flex items-center justify-between gap-2 bg-red-50 border border-red-200 rounded-xl p-1.5">
+                    <div class="flex items-center bg-white rounded-lg p-0.5 border border-slate-200 shadow-2xs">
                       <button
                         type="button"
                         @click="stepQty(item.id, -1)"
-                        class="w-8 h-8 rounded-md text-white hover:bg-ld-red font-bold transition flex items-center justify-center cursor-pointer"
+                        class="w-8 h-8 rounded-md text-ld-navy hover:bg-ld-red hover:text-white font-bold transition flex items-center justify-center cursor-pointer"
                         aria-label="Diminuir quantidade"
                       >
                         <i class="fa-solid fa-minus text-xs"></i>
@@ -471,7 +471,7 @@
                         max="999"
                         :value="cart[item.id]"
                         @change="onInputQty(item.id, $event)"
-                        class="w-11 text-center bg-transparent font-extrabold text-white text-sm focus:outline-none"
+                        class="w-11 text-center bg-transparent font-extrabold text-ld-navy text-sm focus:outline-none"
                         aria-label="Quantidade"
                       />
                       <button
@@ -485,7 +485,7 @@
                     </div>
                     <div class="text-right pr-2">
                       <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-bold">Subtotal</span>
-                      <span class="text-sm font-extrabold text-amber-400">
+                      <span class="text-sm font-extrabold text-ld-red">
                         {{ item.price > 0 ? formatBRL(cart[item.id] * item.price) : 'Incluído' }}
                       </span>
                     </div>
@@ -708,6 +708,17 @@
                 placeholder="Observações (opcional)"
                 class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs focus:outline-none focus:border-ld-red resize-none"
               ></textarea>
+            </div>
+
+            <!-- Preview Ao Vivo da Mensagem do WhatsApp -->
+            <div class="pt-3 border-t border-slate-200">
+              <div class="flex items-center gap-1.5 text-[11px] font-bold text-emerald-700 mb-2">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span>Prévia da mensagem que será enviada:</span>
+              </div>
+              <div class="bg-[#E7FFDB] border border-emerald-200 rounded-2xl rounded-tl-none p-3 text-[11px] text-slate-800 whitespace-pre-line leading-relaxed font-sans shadow-2xs">
+                {{ whatsappPreviewText }}
+              </div>
             </div>
           </div>
 

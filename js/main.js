@@ -595,6 +595,23 @@ function mountCatalogVueApp() {
         return 'Sob Consulta';
       });
 
+      const whatsappPreviewText = computed(() => {
+        if (!hasAny.value) return '';
+        const lines = [`Olá, ${CONFIG.brandName}!`, `Montei meu orçamento pelo site:`, ''];
+        if (customer.name.trim()) lines.push(`• Nome: ${customer.name.trim()}`);
+        if (customer.company.trim()) lines.push(`• Local: ${customer.company.trim()}`);
+        lines.push(`• Cidade: ${customer.city.trim() || 'Bom Jesus - PI'} (${customer.deliveryMode})`);
+        lines.push('');
+        cartEntries.value.forEach(({ item, qty, subtotal }) => {
+          const val = item.price > 0 ? ` = ${formatBRL(subtotal)}` : ' (Sob Consulta)';
+          lines.push(`- ${qty}x ${item.name}${val}`);
+        });
+        if (totalAmount.value > 0) {
+          lines.push('', `Total estimado: ${formatBRL(totalAmount.value)}`);
+        }
+        return lines.join('\n');
+      });
+
       function getCategoryCount(cat) {
         return cat.items.reduce((sum, it) => sum + Number(cart[it.id] || 0), 0);
       }
@@ -738,6 +755,7 @@ function mountCatalogVueApp() {
         totalAmount,
         hasAny,
         formattedTotal,
+        whatsappPreviewText,
         formatBRL,
         getCategoryCount,
         selectCategory,
