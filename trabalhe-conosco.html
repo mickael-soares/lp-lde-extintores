@@ -24,9 +24,6 @@
   <!-- Favicon SVG Monograma LD -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B192C'/%3E%3Cpath d='M16 14v36h18v-8H25V14h-9z' fill='%23FFFFFF'/%3E%3Cpath d='M30 14h8c11 0 18 7.5 18 18s-7 18-18 18h-8v-8h7.5c6.2 0 10.5-4.2 10.5-10s-4.3-10-10.5-10H30v-8z' fill='%23DC2626'/%3E%3C/svg%3E">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- Google Fonts: Montserrat + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,32 +32,8 @@
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['"Montserrat"', 'system-ui', 'sans-serif'],
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            ld: {
-              navy: '#0B192C',
-              navyDark: '#07101D',
-              navyLight: '#152C4A',
-              red: '#DC2626',
-              redDark: '#B91C1C',
-              redSoft: '#FEF2F2',
-              amber: '#F59E0B',
-              slate: '#F8FAFC',
-              ink: '#0F172A'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
+  <!-- Tailwind CSS Compilado Local (Produção - Zero dependência de CDN) -->
+  <link rel="stylesheet" href="css/tailwind.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="font-sans text-ld-ink bg-white selection:bg-ld-red selection:text-white min-h-screen flex flex-col">

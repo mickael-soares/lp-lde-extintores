@@ -31,9 +31,6 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="LD Extintores e Equipamentos">
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <!-- Google Fonts: Montserrat + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,32 +39,8 @@
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['"Montserrat"', 'system-ui', 'sans-serif'],
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-          },
-          colors: {
-            ld: {
-              navy: '#0B192C',
-              navyDark: '#07101D',
-              navyLight: '#152C4A',
-              red: '#DC2626',
-              redDark: '#B91C1C',
-              redSoft: '#FEF2F2',
-              amber: '#F59E0B',
-              slate: '#F8FAFC',
-              ink: '#0F172A'
-            }
-          }
-        }
-      }
-    }
-  </script>
-
+  <!-- Tailwind CSS Compilado Local (Produção - Zero dependência de CDN) -->
+  <link rel="stylesheet" href="css/tailwind.min.css">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Dados Estruturados Schema.org (LocalBusiness) -->
