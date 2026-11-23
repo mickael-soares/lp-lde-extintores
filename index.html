@@ -150,10 +150,10 @@
 
   <main class="flex-1">
     <!-- =========================================================
-         HERO FULL-BLEED (EQUIPAMENTOS INTEGRADOS AO PRÓPRIO FUNDO AZUL)
+         HERO MINIMALISTA (EQUIPAMENTOS RECORTADOS EM PNG SOBRE O FUNDO PONTILHADO)
     ========================================================= -->
-    <section id="inicio" class="bg-hero-industrial hero-bg-photo text-white relative overflow-hidden py-16 lg:py-24">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 grid lg:grid-cols-12 gap-8 items-center">
+    <section id="inicio" class="bg-hero-industrial text-white relative overflow-hidden py-12 lg:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
 
         <!-- Coluna Esquerda: Direta e Minimalista -->
         <div class="lg:col-span-6 fade-up">
@@ -191,8 +191,14 @@
           </div>
         </div>
 
-        <!-- Coluna Direita Livre para Exibir 100% da Composição no Fundo -->
-        <div class="hidden lg:block lg:col-span-6 min-h-[300px]" aria-hidden="true"></div>
+        <!-- Coluna Direita: Equipamentos Recortados (PNG Transparente sobre o fundo azul pontilhado) -->
+        <div class="lg:col-span-6 fade-up flex items-center justify-center">
+          <img
+            src="images/hero-equipamentos.png"
+            alt="Extintores ABC e CO2, placas fotoluminescentes NBR e luminária de emergência LED - LD Extintores"
+            class="hero-cutout-shadow w-full max-w-lg h-auto object-contain select-none"
+          />
+        </div>
 
       </div>
     </section>

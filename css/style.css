@@ -44,31 +44,19 @@ body {
   background: var(--ld-red);
 }
 
-/* Hero Full-Bleed: a própria imagem dos equipamentos faz o fundo azul escuro contínuo */
+/* Hero Industrial com Padrão Pontilhado Técnico Original */
 .bg-hero-industrial {
-  background-color: #020A17;
-  background-image: linear-gradient(180deg, #000513 0%, #030D1C 58%, #0C1426 100%);
-}
-
-/* Integração contínua da imagem no lado direito sem recorte visível */
-.hero-bg-photo {
+  background-color: #07101D;
   background-image:
-    linear-gradient(90deg, #020A17 0%, #020A17 34%, rgba(2, 10, 23, 0.78) 48%, rgba(2, 10, 23, 0.15) 68%, rgba(2, 10, 23, 0) 100%),
-    linear-gradient(180deg, rgba(0, 5, 19, 0.55) 0%, rgba(0, 5, 19, 0) 20%, rgba(12, 20, 38, 0) 80%, rgba(12, 20, 38, 0.75) 100%),
-    url('../images/hero-equipamentos.jpg');
-  background-repeat: no-repeat;
-  background-position: right center;
-  background-size: auto 100%;
+    radial-gradient(circle at 14% 22%, rgba(220, 38, 38, 0.22) 0%, transparent 45%),
+    radial-gradient(circle at 82% 55%, rgba(220, 38, 38, 0.14) 0%, transparent 48%),
+    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 26px 26px;
 }
 
-@media (max-width: 1023px) {
-  .hero-bg-photo {
-    background-image:
-      linear-gradient(180deg, rgba(2, 10, 23, 0.88) 0%, rgba(2, 10, 23, 0.65) 55%, rgba(2, 10, 23, 0.92) 100%),
-      url('../images/hero-equipamentos.jpg');
-    background-position: center center;
-    background-size: cover;
-  }
+/* Sombra suave nos equipamentos recortados em PNG transparente */
+.hero-cutout-shadow {
+  filter: drop-shadow(0 22px 32px rgba(0, 0, 0, 0.65));
 }
 
 /* Seção de Catálogo Claro com Grade Técnica Sutil */
