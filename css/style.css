@@ -44,21 +44,21 @@ body {
   background: var(--ld-red);
 }
 
-/* Hero Industrial com Padrão Pontilhado Técnico (mesmo tom base #071223 da imagem) */
+/* Hero Industrial com Padrão Pontilhado Técnico (tom #0A1424 para mix-blend-mode lighten apagar 100% do fundo da foto) */
 .bg-hero-industrial {
-  background-color: #071223;
+  background-color: #0A1424;
   background-image:
     radial-gradient(circle at 14% 22%, rgba(220, 38, 38, 0.18) 0%, transparent 45%),
     radial-gradient(circle at 75% 55%, rgba(220, 38, 38, 0.12) 0%, transparent 48%),
-    radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    radial-gradient(rgba(255, 255, 255, 0.065) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 26px 26px;
 }
 
-/* Faz o azul escuro da imagem desaparecer sobre o fundo pontilhado (zero quadrado visível) */
+/* Faz 100% do azul escuro da imagem desaparecer sobre o fundo pontilhado sem isolamento de camada */
 .hero-seamless-fade {
   mix-blend-mode: lighten;
-  -webkit-mask-image: radial-gradient(ellipse 68% 72% at 52% 52%, #000 50%, transparent 94%);
-  mask-image: radial-gradient(ellipse 68% 72% at 52% 52%, #000 50%, transparent 94%);
+  -webkit-mask-image: radial-gradient(ellipse 66% 70% at 50% 52%, #000 54%, transparent 94%);
+  mask-image: radial-gradient(ellipse 66% 70% at 50% 52%, #000 54%, transparent 94%);
 }
 
 /* Seção de Catálogo Claro com Grade Técnica Sutil */

@@ -153,7 +153,7 @@
          HERO MINIMALISTA (EQUIPAMENTOS RECORTADOS EM PNG SOBRE O FUNDO PONTILHADO)
     ========================================================= -->
     <section id="inicio" class="bg-hero-industrial text-white relative overflow-hidden py-12 lg:py-16">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
 
         <!-- Coluna Esquerda: Direta e Minimalista -->
         <div class="lg:col-span-6 fade-up">
@@ -191,8 +191,8 @@
           </div>
         </div>
 
-        <!-- Coluna Direita: Imagem Oficial Integrada Diretamente ao Fundo Azul Pontilhado (Sem Quadrado) -->
-        <div class="lg:col-span-6 fade-up flex items-center justify-center">
+        <!-- Coluna Direita: Sem z-index/transform para mix-blend-mode lighten fundir 100% com o fundo pontilhado -->
+        <div class="lg:col-span-6 flex items-center justify-center">
           <img
             src="images/hero-equipamentos.jpg"
             alt="Extintores ABC e CO2, placas fotoluminescentes NBR e luminária de emergência LED - LD Extintores"
