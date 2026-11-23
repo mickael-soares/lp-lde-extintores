@@ -54,10 +54,11 @@ body {
   background-size: 100% 100%, 100% 100%, 26px 26px;
 }
 
-/* Dissolve suavemente apenas as bordas externas da foto sobre o fundo azul pontilhado */
+/* Faz o azul escuro da imagem desaparecer sobre o fundo pontilhado (zero quadrado visível) */
 .hero-seamless-fade {
-  -webkit-mask-image: radial-gradient(ellipse 76% 78% at 50% 50%, #000 58%, transparent 98%);
-  mask-image: radial-gradient(ellipse 76% 78% at 50% 50%, #000 58%, transparent 98%);
+  mix-blend-mode: lighten;
+  -webkit-mask-image: radial-gradient(ellipse 68% 72% at 52% 52%, #000 50%, transparent 94%);
+  mask-image: radial-gradient(ellipse 68% 72% at 52% 52%, #000 50%, transparent 94%);
 }
 
 /* Seção de Catálogo Claro com Grade Técnica Sutil */
