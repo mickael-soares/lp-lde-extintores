@@ -44,19 +44,20 @@ body {
   background: var(--ld-red);
 }
 
-/* Hero Industrial com Padrão Pontilhado Técnico Original */
+/* Hero Industrial com Padrão Pontilhado Técnico (mesmo tom base #071223 da imagem) */
 .bg-hero-industrial {
-  background-color: #07101D;
+  background-color: #071223;
   background-image:
-    radial-gradient(circle at 14% 22%, rgba(220, 38, 38, 0.22) 0%, transparent 45%),
-    radial-gradient(circle at 82% 55%, rgba(220, 38, 38, 0.14) 0%, transparent 48%),
+    radial-gradient(circle at 14% 22%, rgba(220, 38, 38, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 75% 55%, rgba(220, 38, 38, 0.12) 0%, transparent 48%),
     radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 26px 26px;
 }
 
-/* Sombra suave nos equipamentos recortados em PNG transparente */
-.hero-cutout-shadow {
-  filter: drop-shadow(0 22px 32px rgba(0, 0, 0, 0.65));
+/* Dissolve suavemente apenas as bordas externas da foto sobre o fundo azul pontilhado */
+.hero-seamless-fade {
+  -webkit-mask-image: radial-gradient(ellipse 76% 78% at 50% 50%, #000 58%, transparent 98%);
+  mask-image: radial-gradient(ellipse 76% 78% at 50% 50%, #000 58%, transparent 98%);
 }
 
 /* Seção de Catálogo Claro com Grade Técnica Sutil */
