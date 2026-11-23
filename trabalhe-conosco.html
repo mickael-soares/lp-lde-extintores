@@ -47,8 +47,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Font Awesome 6 Local (Zero dependência de CDN) -->
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 
   <!-- Tailwind CSS Compilado Local (Produção - Zero dependência de CDN) -->
   <link rel="stylesheet" href="css/tailwind.min.css">
@@ -116,21 +116,21 @@
 
   <main class="flex-1">
     <!-- =========================================================
-         HERO CARREIRAS
+         HERO CARREIRAS (MINIMALISTA)
     ========================================================= -->
     <section class="bg-hero-industrial text-white py-14 lg:py-16">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center fade-up">
-        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-bold text-amber-300 mb-4">
-          <i class="fa-solid fa-briefcase text-ld-red"></i>
-          Carreiras &amp; Oportunidades • Bom Jesus - PI
-        </span>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center fade-up">
+        <p class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-300 mb-3">
+          <span class="w-2 h-2 rounded-full bg-ld-red"></span>
+          Carreiras &amp; Oportunidades
+        </p>
 
         <h1 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight tracking-tight">
           Faça parte da equipe <span class="text-ld-red">LD Extintores</span>
         </h1>
 
-        <p class="mt-3.5 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Buscamos profissionais comprometidos, proativos e que valorizam a segurança para crescer conosco em <strong class="text-white">Bom Jesus - PI e região</strong>.
+        <p class="mt-3.5 text-sm sm:text-base text-slate-300 max-w-xl mx-auto leading-relaxed">
+          Buscamos profissionais comprometidos para crescer conosco em nossa sede e operações na região.
         </p>
       </div>
     </section>
@@ -330,9 +330,9 @@
   </main>
 
   <!-- =========================================================
-       FOOTER (ANCORADO NA BASE)
+       FOOTER (ANCORADO NA BASE - PADRÃO UNIFICADO)
   ========================================================= -->
-  <footer class="mt-auto bg-ld-navy text-slate-300 pt-10 pb-8 border-t border-slate-200">
+  <footer class="mt-auto bg-ld-navyDark text-slate-300 pt-10 pb-8 border-t border-white/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
         <div class="flex items-center gap-3.5 text-center md:text-left">

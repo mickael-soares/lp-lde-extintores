@@ -47,8 +47,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Font Awesome 6 Local (Zero dependência de CDN) -->
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
 
   <!-- Tailwind CSS Compilado Local (Produção - Zero dependência de CDN) -->
   <link rel="stylesheet" href="css/tailwind.min.css">
@@ -116,21 +116,21 @@
 
   <main class="flex-1">
     <!-- =========================================================
-         HERO INSTITUCIONAL
+         HERO INSTITUCIONAL (MINIMALISTA)
     ========================================================= -->
     <section class="bg-hero-industrial text-white py-14 lg:py-16">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center fade-up">
-        <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-bold text-white mb-4">
-          <i class="fa-solid fa-building-shield text-ld-red"></i>
-          LD Extintores e Equipamentos Ltda • CNPJ 40.940.673/0001-46
-        </span>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center fade-up">
+        <p class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-slate-300 mb-3">
+          <span class="w-2 h-2 rounded-full bg-ld-red"></span>
+          CNPJ 40.940.673/0001-46 • Registrada no INMETRO
+        </p>
 
         <h1 class="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight tracking-tight">
           Uma nova marca. <span class="text-ld-red">O mesmo compromisso.</span>
         </h1>
 
         <p class="mt-3.5 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Sediada no Bairro São Pedro, em <strong class="text-white">Bom Jesus - PI</strong>, somos uma empresa certificada pelo <strong class="text-white">INMETRO</strong> dedicada a proteger vidas, empresas e o agronegócio no sul do Piauí.
+          Soluções certificadas em prevenção e combate a incêndio para empresas, comércios, condomínios e o agronegócio no sul do Piauí.
         </p>
       </div>
     </section>
@@ -142,33 +142,24 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-10 items-center">
 
         <div class="lg:col-span-6 space-y-4 fade-up">
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-ld-red font-bold text-xs uppercase tracking-wider">
-            <i class="fa-solid fa-fire-extinguisher"></i>
-            Quem Somos
-          </span>
-
           <h2 class="font-display font-extrabold text-xl sm:text-2xl text-ld-navy leading-snug">
-            Excelência em Prevenção e Combate a Incêndio
+            Rigor Técnico e Rastreabilidade em Cada Cilindro
           </h2>
 
           <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            A <strong>LD Extintores e Equipamentos</strong> atende <strong>Bom Jesus - PI e região</strong> com soluções completas de prevenção contra incêndios para comércios, clínicas, escolas, condomínios, frotas e fazendas.
-          </p>
-
-          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
-            Em nosso novo posicionamento de marca, modernizamos nossa estrutura mantendo o rigor técnico que nos define: <strong>zero tolerância com selos falsificados</strong>, insumos certificados e rastreabilidade total em cada cilindro revisado.
+            Em nosso novo posicionamento de marca, modernizamos a estrutura de atendimento mantendo o padrão técnico que nos define: <strong>zero tolerância com selos falsificados</strong>, insumos de alta pureza e garantia total em cada equipamento revisado.
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
               <i class="fa-solid fa-certificate text-ld-red text-base mb-1.5"></i>
-              <h3 class="font-display font-bold text-sm text-ld-navy">Credenciada INMETRO</h3>
-              <p class="text-xs text-slate-500 mt-0.5">Manutenção Nível 2 e 3 dentro das normas ABNT NBR.</p>
+              <h3 class="font-display font-bold text-sm text-ld-navy">Normas ABNT NBR</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Manutenção Nível 2 e 3 pronta para vistoria dos Bombeiros.</p>
             </div>
             <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
               <i class="fa-solid fa-tractor text-ld-red text-base mb-1.5"></i>
-              <h3 class="font-display font-bold text-sm text-ld-navy">Forte no Agronegócio</h3>
-              <p class="text-xs text-slate-500 mt-0.5">Presença na Agrotec Show e atendimento a fazendas e galpões.</p>
+              <h3 class="font-display font-bold text-sm text-ld-navy">Presença no Agro</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Atuação na Agrotec Show e suporte técnico em fazendas e galpões.</p>
             </div>
           </div>
         </div>
@@ -385,34 +376,12 @@
         </div>
       </div>
     </section>
-
-    <!-- =========================================================
-         SEÇÃO CTA FINAL (COM RESPIRO E DIVISÓRIA BRANCA ANTES DO RODAPÉ)
-    ========================================================= -->
-    <section class="py-12 sm:py-16 bg-white border-t border-slate-200/70 px-4 sm:px-6">
-      <div class="max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-ld-navy via-ld-navyLight to-ld-red text-white text-center px-6 py-10 sm:py-12 shadow-xl">
-        <h2 class="font-display text-xl sm:text-2xl font-extrabold mb-2">
-          Precisa regularizar os extintores da sua empresa?
-        </h2>
-        <p class="text-white/90 text-xs sm:text-sm max-w-xl mx-auto mb-6">
-          Fale agora com a equipe da LD Extintores em Bom Jesus - PI e solicite sua coleta, recarga ou orçamento completo.
-        </p>
-        <button
-          type="button"
-          onclick="openDirectWhatsApp()"
-          class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3.5 px-7 rounded-full shadow-lg shadow-black/25 transition-transform active:scale-95 text-xs sm:text-sm cursor-pointer"
-        >
-          <i class="fa-brands fa-whatsapp text-lg"></i>
-          <span>Falar no WhatsApp (89) 98121-7813</span>
-        </button>
-      </div>
-    </section>
   </main>
 
   <!-- =========================================================
-       FOOTER (ANCORADO NA BASE)
+       FOOTER (ANCORADO NA BASE - PADRÃO UNIFICADO)
   ========================================================= -->
-  <footer class="mt-auto bg-ld-navy text-slate-300 pt-10 pb-8 border-t border-slate-200">
+  <footer class="mt-auto bg-ld-navyDark text-slate-300 pt-10 pb-8 border-t border-white/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
         <div class="flex items-center gap-3.5 text-center md:text-left">
