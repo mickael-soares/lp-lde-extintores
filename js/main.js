@@ -450,7 +450,7 @@ const CATALOG_CATEGORIES = [
         subtitle: 'Avaliação presencial dos seus extintores',
         badge: 'BOM JESUS E REGIÃO',
         specTag: 'ATENDIMENTO IN LOCO',
-        image: 'images/hero-industrial.jpg',
+        image: 'images/hero-equipamentos.jpg',
         price: 0.00,
         priceLabel: 'Sob Consulta',
         unit: 'visita',
