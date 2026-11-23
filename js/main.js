@@ -526,9 +526,10 @@ function mountCatalogVueApp() {
         notes: ''
       });
 
-      // Restaurar do localStorage
+      // Restaurar apenas na sessão atual (limpa automaticamente ao fechar o navegador/aba)
       try {
-        const raw = localStorage.getItem(CONFIG.storageKey);
+        localStorage.removeItem(CONFIG.storageKey); // remove resquícios antigos de localStorage
+        const raw = sessionStorage.getItem(CONFIG.storageKey);
         if (raw) {
           const parsed = JSON.parse(raw);
           if (parsed?.cart) {
@@ -549,7 +550,7 @@ function mountCatalogVueApp() {
         () => ({ cart: { ...cart }, customer: { ...customer } }),
         val => {
           try {
-            localStorage.setItem(CONFIG.storageKey, JSON.stringify(val));
+            sessionStorage.setItem(CONFIG.storageKey, JSON.stringify(val));
           } catch (e) {
             // ignore
           }

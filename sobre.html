@@ -84,20 +84,12 @@
         <a href="trabalhe-conosco.html" class="hover:text-white transition">Trabalhe Conosco</a>
       </nav>
 
-      <!-- Ações Header -->
-      <div class="flex items-center gap-2.5">
-        <a
-          href="index.html#catalogo"
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl btn-glow-red text-white font-bold text-xs sm:text-sm transition"
-        >
-          <i class="fa-solid fa-calculator"></i>
-          <span class="hidden sm:inline">Simular Orçamento</span>
-        </a>
-
+      <!-- Ações Header (Apenas menu mobile nas páginas secundárias) -->
+      <div class="flex items-center gap-2.5 lg:hidden">
         <button
           id="mobile-menu-btn"
           type="button"
-          class="lg:hidden w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center"
+          class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center"
           aria-label="Abrir menu"
         >
           <i class="fa-solid fa-bars"></i>
@@ -355,22 +347,15 @@
             ></iframe>
           </div>
 
-          <div class="flex flex-col sm:flex-row gap-3">
+          <div class="flex">
             <a
               href="https://www.google.com/maps/search/?api=1&query=-9.0759503,-44.3645488"
               target="_blank"
               rel="noopener noreferrer"
-              class="flex-1 py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-ld-navy font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition whitespace-nowrap"
+              class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-ld-navy font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition whitespace-nowrap"
             >
               <i class="fa-solid fa-map-location-dot text-ld-red"></i>
               <span>Ver no Google Maps</span>
-            </a>
-            <a
-              href="index.html#catalogo"
-              class="flex-1 py-2.5 px-4 rounded-xl bg-ld-red hover:bg-ld-redDark text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition whitespace-nowrap"
-            >
-              <i class="fa-solid fa-calculator"></i>
-              <span>Simular Orçamento</span>
             </a>
           </div>
         </div>
