@@ -84,12 +84,13 @@
         <a href="trabalhe-conosco.html" class="text-white font-bold transition">Trabalhe Conosco</a>
       </nav>
 
-      <!-- Ações Header (Apenas menu mobile nas páginas secundárias) -->
-      <div class="flex items-center gap-2.5 lg:hidden">
+      <!-- Espaçador Desktop (mantém o menu centralizado na mesma posição da Home) + Menu Mobile -->
+      <div class="flex items-center gap-2.5">
+        <div class="hidden lg:block w-[166px]" aria-hidden="true"></div>
         <button
           id="mobile-menu-btn"
           type="button"
-          class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center"
+          class="lg:hidden w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center"
           aria-label="Abrir menu"
         >
           <i class="fa-solid fa-bars"></i>
