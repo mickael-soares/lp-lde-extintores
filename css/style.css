@@ -44,19 +44,16 @@ body {
   background: var(--ld-red);
 }
 
-/* Hero Industrial com Corte Diagonal e Fotografia Técnica */
+/* Hero Minimalista Dark com Integração Suave da Composição */
 .bg-hero-industrial {
   background-color: #07101D;
-  background-image:
-    radial-gradient(circle at 14% 22%, rgba(220, 38, 38, 0.25) 0%, transparent 45%),
-    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 100% 100%, 26px 26px;
+  background-image: radial-gradient(circle at 72% 50%, rgba(220, 38, 38, 0.16) 0%, transparent 52%);
 }
 
-/* Faixa Diagonal Vermelha no Hero Desktop */
-.hero-diagonal-accent {
-  background: linear-gradient(135deg, #DC2626 0%, #991B1B 100%);
-  clip-path: polygon(18% 0, 100% 0, 82% 100%, 0% 100%);
+/* Máscara suave para integrar a imagem dos equipamentos ao fundo escuro sem quadrado/borda */
+.hero-equipment-blend {
+  -webkit-mask-image: radial-gradient(ellipse 88% 85% at 50% 50%, #000 62%, transparent 100%);
+  mask-image: radial-gradient(ellipse 88% 85% at 50% 50%, #000 62%, transparent 100%);
 }
 
 /* Seção de Catálogo Claro com Grade Técnica Sutil */
